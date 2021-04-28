@@ -1,6 +1,1 @@
-int main(){
-
-
-
-    dgld[lgdf]
-}
+int main()
