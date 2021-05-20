@@ -204,7 +204,7 @@ include("../config.php");
 				</td>
 				<td>  	
 					<label>Country</label>
-						<select name="country" id="select">
+						<select name="country" id="country">
 					
 						  <option value="AF" countrynum="93">Afghanistan</option>
 						  <option value="ALA" countrynum="358">Aland Islands</option>
@@ -339,7 +339,7 @@ include("../config.php");
 						  <option value="MK" countrynum="389">Macedonia</option>
 						  <option value="MG" countrynum="261">Madagascar</option>
 						  <option value="MW" countrynum="265">Malawi</option>
-						  <option value="MY" countrynum="60">Malaysia</option>
+						  <option value="MY" countrynum="60" selected="">Malaysia</option>
 						  <option value="MV" countrynum="960">Maldives</option>
 						  <option value="ML" countrynum="223">Mali</option>
 						  <option value="MT" countrynum="356">Malta</option>
@@ -411,7 +411,7 @@ include("../config.php");
 						  <option value="SI" countrynum="386">Slovenia</option>
 						  <option value="SB" countrynum="677">Solomon Islands</option>
 						  <option value="SO" countrynum="252">Somalia</option>
-						  <option value="SOM" countrynum="252" selected="">Somaliland</option>
+						  <option value="SOM" countrynum="252">Somaliland</option>
 						  <option value="ZA" countrynum="27">South Africa</option>
 						  <option value="SGS" countrynum="44">South Georgia and the South Sandwich Islands</option>
 						  <option value="KR" countrynum="82">South Korea</option>

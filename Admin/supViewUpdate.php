@@ -57,58 +57,10 @@ include("../config.php");
 
 
 <body>
-<div id="container">
-	<div id="header">
-		<div id="logo-banner">
-			<div id="logo">
-				<a href="index.php"><img src="images/logo.png" alt="" /></a>
-			</div>
-		<div id="banner">
-    </div>
-</div>
-</div> 
 
-<div id="content-wrap">	
-	<section id="secondary_bar">
-            <nav><!-- Defining the navigation menu -->
-                <ul>
-                    <li class="selected"><a href="index.php">Home</a></li>
-                    <li><a href="addSupplier.php">Add warehouse</a></li>
-                    <li><a href="addProduct.php">Add product</a></li>
-                    <li><a href="#">Add employee</a></li>
-                    <li><a href="addCategory.php">Categories</a></li>
-                    <li class="logout"> <span class="check"> <?php echo "Welcome Mr/Miss:   ". "<font color='##fa5400'><i><b>".$login_session."</b></i></font>" ;?> </span></li>	
-                </ul>
-            </nav>
-	</section><!-- end of secondary bar -->
-	   	
-<aside id="sidebar" class="column">
-		
-		<hr/>
-		<h3>Reports</h3>
-		<ul class="toggle">
-		    <li class="icn_settings"><a href="#">Order Report</a></li>
-			<li class="icn_settings"><a href="#">Employee Report</a></li>
-			<li class="icn_settings"><a href="#">Customer Report</a></li>
-			<li class="icn_settings"><a href="#"> Product Report</a></li>
-     		
-		</ul>
-	
-		<h3>Administrator</h3>
-		<ul class="toggle">
-		    <li class="icn_add_user"><a href="#">Add Employee</a></li>
-			<li class="icn_photo"><a href="addProduct.php">Add Product</a></li>
-			<li class="icn_tags"><a href="addSupplier.php">Add Warehouse</a></li>
-			<li class="icn_new_article"><a href="addCategory.php">Add Category</a></li>
-		
-		</ul>
-		
-        <h3>Tables</h3>
-		<ul class="toggle">
-		    <li class="icn_categories"><a href="#">Order Detail</a></li>
-     		<li class="icn_categories"><a href="#">Customer Detail</a></li>
-		</ul>
-	</aside><!-- end of sidebar -->
+    <?php
+        include ("./dashboard.php")
+    ?>
 	
 	<section id="main" class="column">
 	
@@ -137,7 +89,7 @@ include("../config.php");
 			</td>
 			<td>  
 				<label>Country</label>
-					<select name="country" id="select"  value="<?php echo $row['Country'];?>"  placeholder="Select Country" required>
+					<select name="country" id="country"  value="<?php echo $row['Country'];?>"  placeholder="Select Country" required>
 				
 					  <option value="AF" countrynum="93">Afghanistan</option>
 					  <option value="ALA" countrynum="358">Aland Islands</option>
@@ -272,7 +224,7 @@ include("../config.php");
 					  <option value="MK" countrynum="389">Macedonia</option>
 					  <option value="MG" countrynum="261">Madagascar</option>
 					  <option value="MW" countrynum="265">Malawi</option>
-					  <option value="MY" countrynum="60">Malaysia</option>
+					  <option value="MY" countrynum="60"  selected="">Malaysia</option>
 					  <option value="MV" countrynum="960">Maldives</option>
 					  <option value="ML" countrynum="223">Mali</option>
 					  <option value="MT" countrynum="356">Malta</option>
@@ -344,7 +296,7 @@ include("../config.php");
 					  <option value="SI" countrynum="386">Slovenia</option>
 					  <option value="SB" countrynum="677">Solomon Islands</option>
 					  <option value="SO" countrynum="252">Somalia</option>
-					  <option value="SOM" countrynum="252" selected="">Somaliland</option>
+					  <option value="SOM" countrynum="252">Somaliland</option>
 					  <option value="ZA" countrynum="27">South Africa</option>
 					  <option value="SGS" countrynum="44">South Georgia and the South Sandwich Islands</option>
 					  <option value="KR" countrynum="82">South Korea</option>
