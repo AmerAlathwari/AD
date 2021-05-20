@@ -167,7 +167,7 @@ include("../config.php");
 
 		<script type="text/javascript">
 			$(function() {
-				$('#empValid').keyup(function() {
+				$('#categoryName').keyup(function() {
 				
 					if (this.value.match(/[^a-zA-Z]/g)) {
 						this.value = this.value.replace(/[^a-zA-Z ]/g, '');
@@ -185,17 +185,17 @@ include("../config.php");
 				<tr>
 					<td>  
 						<label>Category Name</label>
-							<input type="text" id="empValid" name="categoryName" placeholder="Category Name" required>
+							<input type="text" id="categoryName" name="categoryName" placeholder="Category Name" required>
 							<span class="error">This is an error</span>
 					</td>
 					<td>   
 						<label>Description</label>
-							<input type="text" id="empValid" name="description" placeholder="Description" required>
+							<input type="text" id="description" name="description" placeholder="Description" required>
 							<span class="error">This is an error</span>
 					</td>
 					<td>  
 						<label> Select Image</label>
-							<input type="file" name="picture" id="picture"  required>
+							<input type="file" name="image" id="image"  required>
 							<span id="pass-info"> </span>					   
 					</td>
 				</tr>
@@ -264,7 +264,7 @@ $(document).ready(function(){
 			</tbody>
 		</table>  
 	</div> 
-</div><!-- end of .tab_container -->
+</div>
 </section>
 
     <?php

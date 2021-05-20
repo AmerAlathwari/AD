@@ -55,58 +55,9 @@ include("../session.php");
 </head>
 
 <body>
-<div id="container">
-	<div id="header"> 
-		<div id="logo-banner">
-			<div id="logo">
-				<a href="index.php"><img src="images/logo.png" alt="" /></a>
-			</div>
-		<div id="banner">
-    </div>
-</div>
-</div>
-		
-<div id="content-wrap">	
-	<section id="secondary_bar">
-        <nav><!-- Defining the navigation menu -->
-            <ul>
-                <li class="selected"><a href="index.php">Home</a></li>
-                <li><a href="add_warehouse.php">Add warehouse</a></li>
-                <li><a href="add_product.php">Add product</a></li>
-                <li><a href="Employee.php">Add employee</a></li>
-                <li><a href="add_category.php">Categories</a></li>
-                <li class="logout"> <span class="check"> <?php echo "Welcome Mr/Miss:   ". "<font color='##fa5400'><i><b>".$login_session."</b></i></font>" ;?> </span></li>	
-            </ul>
-		</nav>
-	</section><!-- end of secondary bar -->
-	   	
-<aside id="sidebar" class="column">
-		
-		<hr/>
-		<h3>Reports</h3>
-		<ul class="toggle">
-		    <li class="icn_settings"><a href="#">Order Report</a></li>
-			<li class="icn_settings"><a href="#">Employee Report</a></li>
-			<li class="icn_settings"><a href="#">Customer Report</a></li>
-			<li class="icn_settings"><a href="#"> Product Report</a></li>
-     		
-		</ul>
-	
-		<h3>Administrator</h3>
-		<ul class="toggle">
-		    <li class="icn_add_user"><a href="#">Add Employee</a></li>
-			<li class="icn_photo"><a href="addProduct.php">Add Product</a></li>
-			<li class="icn_tags"><a href="addSupplier.php">Add Warehouse</a></li>
-			<li class="icn_new_article"><a href="addCategory.php">Add Category</a></li>
-		
-		</ul>
-		
-        <h3>Tables</h3>
-		<ul class="toggle">
-		    <li class="icn_categories"><a href="#">Order Detail</a></li>
-     		<li class="icn_categories"><a href="#">Customer Detail</a></li>
-		</ul>
-</aside><!-- end of sidebar -->
+    <?php
+        include ("./dashboard.php")
+    ?>
 	
 <section id="main" class="column">
 <?php
@@ -117,6 +68,10 @@ $result = mysqli_query($mysqli,"SELECT * FROM product  where Product_ID ='$updat
   {?> 
   
 <div id="form_wrapper" class="form_wrapper">
+		<form class="quick_search">
+			<input type="text"  value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+		</form>
+		
 	<table>
 		<form class="register active" action="prodUpdate.php" method="POST" enctype="multipart/form-data" autocomplete="off">
 			<th colspan="3"><h2>Update Product Data</h2> </th> 
@@ -200,24 +155,22 @@ $result = mysqli_query($mysqli,"SELECT * FROM product  where Product_ID ='$updat
 		</td>
 		<td>   
 			<label>Image</label>
-				<input type="file" name="picture" id="picture"  value="<?php echo $row['Picture'];?>" placeholder="Full name" required>
+				<input type="file" name="picture" id="picture"  value="<?php echo $row['Picture'];?>" required>
 				<span class="error">This is an error</span>
 		</td>
 	</tr>
-	<div class="bottom">
-		<td colspan="3">	
+	<tr>
+		<div class="bottom">
 			<td colspan="3">	
 				<button type="submit"  name="submit" value="Update" class="a-btn"> <span class="a-btn-text">Update Product</span></button>
-			</td>			
-		</td>					
+			</td>							
 		<div class="clear"></div>
-	</div>
+		</div>
+	<tr>
 		</form>			
 	</table>
 </div>
          <?php }?>
-		<article class="module width_3_quarter">
-	    </article><!-- end of content manager article -->
 	</section>
     </div>
 </div>

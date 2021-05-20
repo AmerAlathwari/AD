@@ -376,7 +376,7 @@ include("../config.php");
 		<tr>
 			<div class="bottom">
 				<td colspan="3">	
-					<button type="submit"  name="submit"  class="a-btn"><span class="a-btn-text">Update Supplier</span></button>
+					<button type="submit"  name="submit" value="Update" class="a-btn"><span class="a-btn-text">Update Supplier</span></button>
 					<div class="clear"></div>
 				</td>
 			</div>
@@ -386,7 +386,6 @@ include("../config.php");
 </div> 
  </div> 
       <?php }?>
-
 	</section>
     </div>
 </div>

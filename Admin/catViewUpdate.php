@@ -56,58 +56,9 @@
 
 <body>
 
-<div id="container">
-	<div id="header">
-		<div id="logo-banner">
-			<div id="logo">
-				<a href="index.php"><img src="images/logo.png" alt="" /></a>
-			</div>
-		<div id="banner">
-		</div>
-		</div>
-	</div>
-		
-<div id="content-wrap">	
-	<section id="secondary_bar">
-            <nav><!-- Defining the navigation menu -->
-                <ul>
-                    <li class="selected"><a href="index.php">Home</a></li>
-                    <li><a href="addSupplier.php">Add warehouse</a></li>
-                    <li><a href="addProduct.php">Add product</a></li>
-                    <li><a href="Employee.php">Add employee</a></li>
-                    <li><a href="addCategory.php">Categories</a></li>
-                    <li class="logout"> <span class="check"> <?php echo "Welcome Mr/Miss:   ". "<font color='##fa5400'><i><b>".$login_session."</b></i></font>" ;?> </span></li>
-                </ul>
-            </nav>
-	</section><!-- end of secondary bar -->
-	   	
-	<aside id="sidebar" class="column">
-		
-		<hr/>
-		<h3>Reports</h3>
-		<ul class="toggle">
-		    <li class="icn_settings"><a href="#">Order Report</a></li>
-			<li class="icn_settings"><a href="#">Employee Report</a></li>
-			<li class="icn_settings"><a href="#">Customer Report</a></li>
-			<li class="icn_settings"><a href="#"> Product Report</a></li>
-     		
-		</ul>
-	
-		<h3>Administrator</h3>
-		<ul class="toggle">
-		    <li class="icn_add_user"><a href="#">Add Employee</a></li>
-			<li class="icn_photo"><a href="addProduct.php">Add Product</a></li>
-			<li class="icn_tags"><a href="addSupplier.php">Add Warehouse</a></li>
-			<li class="icn_new_article"><a href="addCategory.php">Add Category</a></li>
-		
-		</ul>
-		
-        <h3>Tables</h3>
-		<ul class="toggle">
-		    <li class="icn_categories"><a href="#">Order Detail</a></li>
-     		<li class="icn_categories"><a href="#">Customer Detail</a></li>
-		</ul>
-	</aside><!-- end of sidebar -->
+    <?php
+        include ("./dashboard.php")
+    ?>
 	
 	<section id="main" class="column">
 	<?php
@@ -124,7 +75,7 @@
 		</form>
 		
 		<table>
-			<form class="register active" enctype="multipart/form-data" autocomplete="off" action="catUpdate.php" method="POST" >
+			<form class="register active" action="catUpdate.php" method="POST" enctype="multipart/form-data" autocomplete="off">
 				<th colspan="3"><h2>UPDATE CATEGORY INFORMATION</h2> </th> 
 					<input type="hidden" id="ID" name="ID" value="<?php echo $row['Category_ID'];?>"  placeholder="ID" required>
 					<span class="error">This is an error</span>
@@ -141,7 +92,7 @@
 			</td>
 			<td>  
 				<label>Image</label>
-				<input type="file" name="picture" id="picture" value="<?php echo $row['Picture'];?>" required>
+				<input type="file" name="image" id="image" value="<?php echo $row['Picture'];?>" required>
 				<span class="error">This is an error</span>					   
 			</td>
 		</tr>
@@ -158,8 +109,7 @@
 	</table>
 </div>
  </div> 
-      <?php }?>
-
+		<?php }?>
 	</section>
     </div>
 </div>

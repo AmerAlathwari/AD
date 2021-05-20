@@ -281,7 +281,7 @@ include("../config.php");
 			//Save the link in a variable called element
 			var element = $(this);
 
-			 if(confirm("You have Pressed 'Add Category' button \n Are you sure to SAVE the category?"))
+			 if(confirm("You have Pressed 'Add Product' button \n Are you sure to SAVE the Product?"))
 					  {
 
 			 $.ajax({
