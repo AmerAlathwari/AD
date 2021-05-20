@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 20, 2021 at 06:22 AM
+-- Generation Time: May 20, 2021 at 08:50 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -97,7 +97,9 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`Employee_ID`, `Employee_Name`, `Username`, `Password`, `Picture`) VALUES
-(1, 'Alya Nasuha', 'alyanasuhax', 'admin123', 'alya.JPG');
+(1, 'Alya Nasuha', 'alyanasuhax', 'admin123', 'alya.JPG'),
+(2, 'Syafiq Salim', 'syafiqqqsalim', 'Syafiq123', 'logo.png'),
+(4, 'Amer Abdulsalam', 'amerabdulsalam', 'Amer123', 'maggie_kari_big.png');
 
 -- --------------------------------------------------------
 
@@ -219,7 +221,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `Employee_ID` int(95) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Employee_ID` int(95) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product`
