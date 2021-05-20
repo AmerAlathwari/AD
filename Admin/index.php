@@ -2,6 +2,7 @@
 include("../session.php");
 include("../config.php");
 
+
 ?>
 
 <!doctype html>
@@ -25,12 +26,12 @@ include("../config.php");
 	
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
 	
-	<script src="../js/jquery-1.5.2.min.js" type="text/javascript"></script>
-	<script src="../js/hideshow.js" type="text/javascript"></script>
-	<script src="../js/jquery.tablesorter.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="../js/jquery.equalHeight.js"></script>
+	<script src="./js/jquery-1.5.2.min.js" type="text/javascript"></script>
+	<script src="./js/hideshow.js" type="text/javascript"></script>
+	<script src="./js/jquery.tablesorter.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="./js/jquery.equalHeight.js"></script>
 
-		<script type="text/javascript">
+	<script type="text/javascript">
 	$(document).ready(function() 
     	{ 
       	  $(".tablesorter").tablesorter(); 
@@ -64,8 +65,7 @@ include("../config.php");
     });
 	</script>
 
-
-	<script type="text/javascript" src="../js/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
 
 
 	<script type="text/javascript">
@@ -133,58 +133,11 @@ include("../config.php");
 	</head>
 
 <body>
-	<!-- header top section -->
-	<section class="banner" role="banner">
-	  <header id="header">
-		<div class="header-content clearfix"> <a class="logo" href="Admin/index.php"><img src="../images/logo.png" alt="Home" width="50" height="50"></a>
-		  <nav class="navigation" role="navigation">
-			<ul class="primary-nav">
-			  <li class="icn_jump_back"><a href="../logout.php">Logout</a></li>
-			</ul>
-		  </nav>
-		  <p align="center" align="center"><b> <a href="addProduct.php"  class="a-btn"><span class="a-btn-text">Add Product</span></a>  </b>	<b> <a href="#tologin"  class="a-btn"> <span class="a-btn-text">Add employee</span> </a>   </b>	<b> <a href="#tologin"  class="a-btn"> <span class="a-btn-text">Categories</span> </a> </b></p>
-	  </header>
-	</section>
-   	
-<aside id="sidebar" class="column">
-					<!-- Begin Search -->
-				<div id="search">
-					<form action="#" method="post" accept-charset="utf-8">
-						<input type="text"  title="Search..." class="blink field"  placeholder="Search Product"   name='search' size=60 maxlength=100 />
-						<input class="search-button" type="submit" value="Submit" />
-						<div class="cl">&nbsp;</div>
-					</form>
-					
-				</div>
-				<!-- End Search -->
-		<hr/>
-		
-		<h3>Reports</h3>
-		<ul class="toggle">
-		    <li class="icn_settings"><a href="#">Order Report</a></li>
-			<li class="icn_settings"><a href="#">Employee Report</a></li>
-			<li class="icn_settings"><a href="#">Customer Report</a></li>
-			<li class="icn_settings"><a href="#"> Product Report</a></li>
-     		
-		</ul>
-	
-		<h3>Administrator</h3>
-		<ul class="toggle">
-		    <li class="icn_add_user"><a href="#">Add Employee</a></li>
-			<li class="icn_photo"><a href="addProduct.php">Add Product</a></li>
-			<li class="icn_tags"><a href="addSupplier.php">Add Warehouse</a></li>
-			<li class="icn_new_article"><a href="addCategory.php">Add Category</a></li>
-		
-		</ul>
-		
-        <h3>Tables</h3>
-		<ul class="toggle">
-		    <li class="icn_categories"><a href="#">Order Detial</a></li>
-     		<li class="icn_categories"><a href="#">Customer Detail</a></li>
-		</ul>
 
-	</aside><!-- end of sidebar -->
-	
+    <?php
+        include ("./dashboard.php")
+    ?>
+
 	<section id="main" class="column">
 		
 		<h4 class="alert_info">Welcome To <strong>"The Coders System Management"</strong> Admin Panel As: <?php echo "  ". "<font color='#f90'><big><b>".$login_session."</b></big></font>" ;?>  </h4> 
@@ -226,8 +179,8 @@ include("../config.php");
 		<thead>
 			</tr>
 				<th>Check</th> 
-				<th> ID</th>
-				<th> Name</th>			  
+				<th>ID</th>
+				<th>Name</th>
 				<th>Email</th>
 				<th>TellePhone</th>	
 				<th>Comment</th>				
@@ -259,36 +212,12 @@ include("../config.php");
     </div>
 </div>
 
-<!-- header content section -->
-<section id="hero" class="section ">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7 col-sm-10 hero">
-        <div class="hero-content">
-        </div>
-        <!-- hero --> 
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- footer section -->
-<footer class="footer">
-  <div class="container">
-    <div class="col-md-6 left">
-      <h4>Don't forget to shop now! For any enquiries :</h4>
-      <p> Call: +603 5521 4421 OR Email : <a href="mailto:alyanasuha1@gmail.com"> grocery@thecoders.com </a></p>
-    </div>
-    <div class="col-md-6 right">
-      <p>© 2021 All rights reserved. All Rights Reserved<br>
-        Made with <i class="fa fa-heart pulse"></i> by The Coders Team</p>
-    </div>
-  </div>
-</footer>
-<!-- footer section --> 
+    <?php
+        include ("./footer.php")
+    ?>
 
 <!-- JS FILES --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script> 
 <script src="../js/jquery.fancybox.pack.js"></script> 
 <script src="../js/retina.min.js"></script> 

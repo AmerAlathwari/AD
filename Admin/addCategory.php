@@ -25,10 +25,10 @@ include("../config.php");
       
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
 	
-	<script src="../js/jquery-1.5.2.min.js" type="text/javascript"></script>
-	<script src="../js/hideshow.js" type="text/javascript"></script>
-	<script src="../js/jquery.tablesorter.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="../js/jquery.equalHeight.js"></script>
+	<script src="./js/jquery-1.5.2.min.js" type="text/javascript"></script>
+	<script src="./js/hideshow.js" type="text/javascript"></script>
+	<script src="./js/jquery.tablesorter.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="./js/jquery.equalHeight.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() 
@@ -63,7 +63,8 @@ include("../config.php");
 			$('.column').equalHeight();
 		});
 	</script>
-	<script type="text/javascript" src="../js/jquery-1.9.0.min.js"></script>
+	<!--<script type="text/javascript" src="./js/jquery-1.9.0.min.js"></script>-->
+    <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 
@@ -129,57 +130,10 @@ include("../config.php");
 	</head>
 
 <body>
-	<!-- header top section -->
-	<section class="banner" role="banner">
-	  <header id="header">
-		<div class="header-content clearfix"> <a class="logo" href="../Admin/index.php"><img src="../images/logo.png" alt="Home" width="50" height="50"></a>
-		  <nav class="navigation" role="navigation">
-			<ul class="primary-nav">
-			  <li class="icn_jump_back"><a href="../logout.php">Logout</a></li>
-			</ul>
-		  </nav>
-		  <p align="center" align="center"><b> <a href="addProduct.php"  class="a-btn"><span class="a-btn-text">Add Product</span></a>  </b>	<b> <a href="#"  class="a-btn"> <span class="a-btn-text">Add employee</span> </a>   </b>	<b> <a href="#"  class="a-btn"> <span class="a-btn-text">Categories</span> </a> </b></p>
-	  </header>
-	</section>
 	
-  <div id="content-wrap">	
-	<aside id="sidebar" class="column">
-					<!-- Begin Search -->
-				<div id="search">
-					<form action="#" method="post" accept-charset="utf-8">
-						<input type="text"  title="Search..." class="blink field"  placeholder="Search Product"   name='search' size=60 maxlength=100 />
-						<input class="search-button" type="submit" value="Submit" />
-						<div class="cl">&nbsp;</div>
-					</form>
-				</div>
-				<!-- End Search -->
-		<hr/>
-		
-		<h3>Reports</h3>
-		<ul class="toggle">
-		    <li class="icn_settings"><a href="#">Order Report</a></li>
-			<li class="icn_settings"><a href="#">Employee Report</a></li>
-			<li class="icn_settings"><a href="#">Customer Report</a></li>
-			<li class="icn_settings"><a href="#"> Product Report</a></li>
-     		
-		</ul>
-	
-		<h3>Administrator</h3>
-		<ul class="toggle">
-		    <li class="icn_add_user"><a href="#">Add Employee</a></li>
-			<li class="icn_photo"><a href="addProduct.php">Add Product</a></li>
-			<li class="icn_tags"><a href="addWarehouse.php">Add Warehouse</a></li>
-			<li class="icn_new_article"><a href="addCategory.php">Add Category</a></li>
-		
-		</ul>
-		
-        <h3>Tables</h3>
-		<ul class="toggle">
-		    <li class="icn_categories"><a href="#">Order Detial</a></li>
-     		<li class="icn_categories"><a href="#">Customer Detail</a></li>
-		</ul>
-
-	</aside><!-- end of sidebar -->
+    <?php
+        include ("./dashboard.php")
+    ?>
 	
 
 <section id="main" class="column">
@@ -191,20 +145,20 @@ include("../config.php");
 			var a=document.forms["addCategory"]["categoryName"].value;
 			if (a==null || a=="")
 			  {
-			  window.alert("Pls. Enter The Category Name !!!");
+			  window.alert("Please. Enter The Category Name !!!");
 
 			  return false;
 			  }
 			var b=document.forms["addCategory"]["description"].value;
 			if (b==null || b=="")
 			  {
-			  alert("Pls. Enter The Description !!!");
+			  alert("Please. Enter The Description !!!");
 			  return false;
 			  }
 			var a=document.forms["addCategory"]["file"].value;
 			if (a==null || a=="")
 			  {
-			  alert("Pls. You Have Been Missing Employee Full Name !!!");
+			  alert("Please. You Have Been Missing Employee Full Name !!!");
 			  return false;
 			  }
 
@@ -219,7 +173,7 @@ include("../config.php");
 						this.value = this.value.replace(/[^a-zA-Z ]/g, '');
 						
 					}
-					Alart("Numbers IS NOT Allowed Sir!!!!!! !!!");
+					Alart("Numbers IS NOT Allowed!!!!!! !!!");
 				});
 			});
 		</script>
@@ -257,21 +211,23 @@ include("../config.php");
 		</table>
 	</div>
 
-	<script type="text/javascript">
-		$(document).ready(function(){ 
-			$("#save").click(function() { 
-			 
-				$.ajax({
-				cache: false,
-				type: 'POST',
-				url: 'insertCategory.php',
-				data: $("#myForm").serialize(),
-				success: function(d) {
-					$("#someElement").html(d);
-				}
-				});
-			}); 
-		});
+	<script>
+<script type="text/javascript">
+
+$(document).ready(function(){ 
+    $("#save").click(function() { 
+     
+        $.ajax({
+        cache: false,
+        type: 'POST',
+        url: 'insertCategory.php',
+        data: $("#myForm").serialize(),
+        success: function(d) {
+            $("#someElement").html(d);
+        }
+        });
+    }); 
+});
 	</script>
 		
 
@@ -281,13 +237,13 @@ include("../config.php");
 		?>
     <div id="tab1" class="tab_content">
 		<table class="tablesorter" cellspacing="0"> 
-			<thead><th colspan="6">Category Data List</th></thead>
+			<thead><th colspan="6">List of Category</th></thead>
 			<thead>
 				</tr>
 				<th>Check</th> 
-				<th> ID</th>
-				<th> Category</th>			  
-				<th>Discription</th>
+				<th>ID</th>
+				<th>Category</th>			  
+				<th>Description</th>
 				<th>Picture</th>				
 				<th>Actions</th>
 				</tr>
@@ -301,8 +257,8 @@ include("../config.php");
 					<td><?php echo $row['Category_Name']; ?></td>
 					<td><?php echo $row['Discription']; ?></td>
 					<td><img src="../images/<?php echo $row['Picture']; ?>" width="40" height="40"></td>
-					<td> <a href="#?update=<?php echo $row['Category_ID']; ?>"  onClick="edit(this);" title="empEdit" >  <input type="image" src="images/icn_edit.png" title="Edit"> </a>
-					 <a href="#?delete=<?php echo $row['Category_ID']; ?>" onClick="del(this);" title="Delete" ><input type="image" src="images/icn_trash.png" title="Trash">  </a></td>
+					<td> <a href="catViewUpdate.php?update=<?php echo $row['Category_ID']; ?>"  onClick="edit(this);" title="empEdit" >  <input type="image" src="images/icn_edit.png" title="Edit"> </a>
+					 <a href="catDelete.php?delete=<?php echo $row['Category_ID']; ?>" onClick="del(this);" title="Delete" ><input type="image" src="images/icn_trash.png" title="Trash">  </a></td>
 				</tr>
 				<?php }mysqli_close($mysqli);?>
 			</tbody>
@@ -310,40 +266,18 @@ include("../config.php");
 	</div> 
 </div><!-- end of .tab_container -->
 </section>
-<!-- header content section -->
-<section id="hero" class="section ">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7 col-sm-10 hero">
-        <div class="hero-content">
-        </div>
-        <!-- hero --> 
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- footer section -->
-<footer class="footer">
-  <div class="container">
-    <div class="col-md-6 left">
-      <h4>Don't forget to shop now! For any enquiries :</h4>
-      <p> Call: +603 5521 4421 OR Email : <a href="mailto:alyanasuha1@gmail.com"> grocery@thecoders.com </a></p>
-    </div>
-    <div class="col-md-6 right">
-      <p>© 2021 All rights reserved. All Rights Reserved<br>
-        Made with <i class="fa fa-heart pulse"></i> by The Coders Team</p>
-    </div>
-  </div>
-</footer>
-<!-- footer section --> 
+    <?php
+        include ("./footer.php")
+    ?>
 
 <!-- JS FILES --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script src="../js/bootstrap.min.js"></script> 
-<script src="../js/jquery.fancybox.pack.js"></script> 
-<script src="../js/retina.min.js"></script> 
-<script src="../js/modernizr.js"></script> 
-<script src="../js/main.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+<script src="./js/jquery-1.11.3.min.js"></script>
+<script src="./js/bootstrap.min.js"></script> 
+<script src="./js/jquery.fancybox.pack.js"></script> 
+<script src="./js/retina.min.js"></script> 
+<script src="./js/modernizr.js"></script> 
+<script src="./js/main.js"></script>
 </body>
 </html>
