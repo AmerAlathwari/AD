@@ -24,18 +24,17 @@
 <body>
 <!-- header top section -->
 <section class="banner" role="banner">
-  <header id="header">
-    <div class="header-content clearfix"> <a class="logo" href="index.php"><img src="images/logo.png" alt="Home" width="50" height="50"></a>
-      <h2 align="center">SignUp Page</h2>
-	  <h4 align="center">Please Register Your Account Now !</h4>
+  <header align="center">
+    <div> <a class="logo" href="index.php"><img src="images/logo.png" alt="Home" width="80" height="80"></a>
+		<h3>SignUp Page</h3>
+		<h4>Please Register Your Account Now !</h4>
+	  </div>
   </header>
 </section>
 
-<!-- header content section --> 
+
 	<body>
-		  <!-- Begin Main -->
 		<div id="main" class="shell">
-			<!-- Begin Content -->
 			<div id="content">
 	
 				<script type="text/javascript">
@@ -157,27 +156,10 @@
 		<!-- End Content -->
 		</div>
     </body>
-<!-- service section -->
-<section id="service" class="service section">
-  <div class="container">
-    <div class="row">
-    </div>
-  </div>
-</section>
-<!-- footer section -->
-<footer class="footer">
-  <div class="container">
-    <div class="col-md-8 left">
-      <h4>Don't forget to shop now! For any enquiries :</h4>
-      <p> Call: +603 5521 4421 OR Email : <a href="mailto:alyanasuha1@gmail.com"> grocery@thecoders.com </a></p>
-    </div>
-    <div class="col-md-4 right">
-      <p>© 2021 All rights reserved. All Rights Reserved<br>
-        Made with <i class="fa fa-heart pulse"></i> by The Coders Team</p>
-    </div>
-  </div>
-</footer>
-<!-- footer section --> 
+	
+	<?php
+        include ("./footer.php")
+    ?>
 
 <!-- JS FILES --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 

@@ -23,26 +23,13 @@
 <body>
 <!-- header top section -->
 <section class="banner" role="banner">
-  <header id="header">
-    <div class="header-content clearfix"> <a class="logo" href="index.php"><img src="images/logo.png" alt="Home" width="50" height="50"></a>
-      <h2 align="center">LogIn Page</h2>
-	  <h4 align="center">Please Login or SignUp</h4></div>
+  <header align="center">
+    <div> <a class="logo" href="index.php"><img src="images/logo.png" alt="Home" width="50" height="50"></a>
+      <h2>SignIn Page</h2>
+	  <h4>Please SignIn or SignUp Now!</h4></div>
   </header>
 </section>
 
-<!-- header content section -->
-<section id="hero" class="section ">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7 col-sm-10 hero">
-        <div class="hero-content">
-        </div>
-        <!-- hero --> 
-      </div>
-    </div>
-  </div>
-</section>
-<!-- header content section --> 
 <body>
         <div class="container">
 			<div class="codrops-top">
