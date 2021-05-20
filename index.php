@@ -1,3 +1,9 @@
+<?php
+include("config.php");
+
+$category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
+?>
+
 <!doctype html>
 
 <html class="no-js" lang="">
@@ -16,6 +22,9 @@
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/font-icon.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	 <link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
+	 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 </head>
 
 <body>
@@ -36,67 +45,47 @@
 			</ul>
 		</nav>
 		  
-<!-- portfolio grid section -->
-<section id="portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <hr class="section">
-      </div>
+<div class="clear"></div>
+			</div>
+
+
+		<!-- Begin Products -->
+			
+				<div id="products">
+				<h2>Featured Products</h2>
+
+	      <div class="section group">
+		  
+		  <?php
+    //current URL of the Page. cart_update.php redirects back to this URL
+	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+    $currency = "$";
+    if($category_id == 0){
+        $results = $mysqli->query("SELECT * FROM product ORDER BY Product_ID ASC");
+    } else {
+        $results = $mysqli->query("SELECT * FROM product WHERE Category_ID='$category_id' ORDER BY Product_ID ASC");
+    }
+    if ($results) {
+	
+        //fetch results set as object and output HTML
+        while($obj = $results->fetch_object())
+        {
+			echo '<div class="grid_1_of_4 images_1_of_4">'; 
+			echo '<div class="product-thumb"><img src="images/'.$obj->Picture.'" ></div>';
+            echo '<div class="product-content"><h2><b>'.$obj->productName.'</b> </h2>';
+            echo '<div class="product-desc">'.$obj->Description.'</div>';
+            echo '<div class="product-info">';
+			echo '<p><span class="price"> Price:<big style="color:green">'.$currency.$obj->Price.'</big></span></p>';
+            echo '</div>';
+        }
+    
+    }
+    ?>
     </div>
-    <div class="row">
-      <div class="col-sm-6 portfolio-item"> <a href="workdetails.php" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content" >
-            <h3>Bens and Jerry Ice Cream</h3>
-            <h4>Ice Cream</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/icecream.png" class="img-responsive" alt="" width="900" height="600"> </a> </div>
-      <div class="col-sm-6 portfolio-item"> <a href="workdetails.php" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Salad</h3>
-            <h4>Vegetable</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/vegetable.png" class="img-responsive" alt="" width="900" height="600"> </a> </div>
-      <div class="col-sm-6 portfolio-item"> <a href="workdetails.php" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Fish</h3>
-            <h4>Fish</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/fish.png" class="img-responsive" alt="" width="900" height="600"> </a> </div>
-      <div class="col-sm-6 portfolio-item"> <a href="workdetails.php" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>French Loaf</h3>
-            <h4>Bread</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/bread.png" class="img-responsive" alt=""> </a> </div>
-      <div class="col-sm-6 portfolio-item"> <a href="workdetails.php" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Campco Milk Chocolate</h3>
-            <h4>Chocolate</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/choc.png" class="img-responsive" alt=""> </a> </div>
-      <div class="col-sm-6 portfolio-item"> <a href="workdetails.php" class="portfolio-link">
-        <div class="caption">
-          <div class="caption-content">
-            <h3>Red grape</h3>
-            <h4>Fruit</h4>
-          </div>
-        </div>
-        <img src="images/portfolio/grape.png" class="img-responsive" alt=""> </a> </div>
-    </div>
-  </div>
-</section>
-<!-- portfolio grid section --> 
+				<div class="cl">&nbsp;</div>
+			</div>
+			
+			<!-- End Products -->		
 <!-- service section -->
 <section id="service" class="service section">
   <div class="container">
