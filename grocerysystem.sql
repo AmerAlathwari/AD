@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 20, 2021 at 02:34 AM
+-- Generation Time: May 20, 2021 at 06:22 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -45,7 +45,8 @@ INSERT INTO `category` (`Category_ID`, `Category_Name`, `Discription`, `Picture`
 (6, 'Vegetables', 'Fresh imported vegetables', 'vegetables.jpg'),
 (12, 'Ice cream', 'Variety of ice-cream flavor, will definitely catch your heart.', 'icecream.PNG'),
 (16, 'Drinks', 'Variety easy to grab drink flavor, include coffee, bicarbonate, yogurt, milk and many more!', 'drinks.png'),
-(21, 'Noodles', 'Instant noodles, or instant ramen, are noodles sold in a precooked and dried block with flavoring powder and/or seasoning oil.', 'maggie.png');
+(21, 'Noodles', 'Instant noodles, or instant ramen, are noodles sold in a precooked and dried block with flavoring powder and/or seasoning oil.', 'maggie.png'),
+(23, '1621487820_', '', '');
 
 -- --------------------------------------------------------
 
@@ -124,7 +125,12 @@ INSERT INTO `product` (`Product_ID`, `productName`, `Category_ID`, `Model`, `Typ
 (11, 'Fuji Bakery Potato Bun', 1, 'Fuji Bakery', 'Bun', 2, 'Bread With Potato F', '3.40', '1619052540_fujibun.jpg'),
 (12, 'Grape', 2, 'Fruit', 'Local Fruit', 1, 'Fresh imported from New Zealand', '9.0', '1621326780_1619072640_grape.png'),
 (13, 'Ikan Kembung', 4, 'The Seafood Market', 'Fresh Fish', 3, 'Direct from Ocean', '3.00', '1621405380_ikan_kembung.jpeg'),
-(14, 'Dutch Lady Low Fat', 10, 'Dutch Lady', 'Milk', 5, 'Low fat fresh milk', '2.20', '1621329840_dutchlady_lowfat.png');
+(14, 'Dutch Lady Low Fat', 10, 'Dutch Lady', 'Milk', 5, 'Low fat fresh milk', '2.20', '1621329840_dutchlady_lowfat.png'),
+(15, 'Nescafe Original', 16, 'Nestle', 'Coffee', 5, 'Cold brew coffee', '2.30', '1621487940_nes_original.png'),
+(16, 'Nescafe Latte', 16, 'Nestle', 'Coffee', 5, 'Cold brew coffee', '2.30', '1621488000_nes_latte.png'),
+(17, 'Big Red Onion ', 6, 'Fresh', 'Vegetable', 4, 'Fresh picked vegeta', '4.50', '1621488180_bawang_besar.png'),
+(18, 'Small Red Onion', 6, 'Fresh', 'Vegetable', 4, 'Fresh picked vegeta', '4.0', '1621488180_bawang_merah.png'),
+(19, 'Maggie Kari 5pack', 21, 'Nestle', 'Instant Noodle', 5, 'Instant Maggie Kari', '3.90', '1621488300_maggie_kari_big.png');
 
 -- --------------------------------------------------------
 
@@ -150,9 +156,9 @@ INSERT INTO `warehouse` (`Warehouse_ID`, `Country`, `City`, `Address`, `PostalCo
 (1, 'MY', 'Selangor', '6, Jalan TSB 4, Taman Industri Sungai Buloh, Petaling Jaya', '47000', 'fruitshq@gmail.com', 'Yong Seng Sdn Bhd'),
 (2, 'MY', 'Selangor', 'No. 41 & 43, Jalan Tiaj 2/1, Taman Industri Alam Jaya, Bandar Puncak Alam', '42300', 'fujibakery@gmail.com', 'Fuji Bakery Supplies (M) Sdn. Bhd.'),
 (3, 'MY', 'Selangor', '73-G, Jalan Setia Utama AT U13/AT, Setia Alam', '40170', 'theseafoodmarket@gmail.com', 'The Seafood Market'),
-(4, '', 'Selangor', 'B-1-13, 162 Residency KM12, Jalan Ipoh Rawang, Batu Caves, Selangor', '68100', 'freshselecthq@gmail.com', 'Fresh Select Sdn Bhd (Vegetable)'),
+(4, 'MY', 'Selangor', 'B-1-13, 162 Residency KM12, Jalan Ipoh Rawang, Batu Caves, Selangor', '68100', 'freshselecthq@gmail.com', 'Fresh Select Sdn Bhd (Vegetable)'),
 (5, 'MY', 'Selangor', 'Menara Surian, No. 22-1, 22nd Floor, No. 1, Jalan PJU 7/3, Mutiara Damansara, Petaling Jaya', '47810', 'nestlehq@gmail.com', 'Nestle Products Sdn. Bhd.'),
-(6, '', 'Johor', '21, Jalan Kempas Utama 3/6, Taman Kempas Utama, Johor Bahru', '81200', 'k2koh@grandmeltique.com', 'Grand Meltique Food Trading Sdn Bhd');
+(6, 'MY', 'Johor', '21, Jalan Kempas Utama 3/6, Taman Kempas Utama, Johor Bahru', '81200', 'k2koh@grandmeltique.com', 'Grand Meltique Food Trading Sdn Bhd');
 
 --
 -- Indexes for dumped tables
@@ -201,7 +207,7 @@ ALTER TABLE `warehouse`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `Category_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `Category_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -219,7 +225,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `Product_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Product_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `warehouse`
