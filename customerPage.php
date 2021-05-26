@@ -5,159 +5,132 @@ include("usersession.php");
 $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 ?>
 
-<!doctype html>
-
-<html class="no-js" lang="">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Coders Online Grocery System</title>
-<link rel="shortcut icon" href="images/logo.png" />
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/flexslider.css">
-<link rel="stylesheet" href="css/jquery.fancybox.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/animate.min.css">
-<link rel="stylesheet" href="css/font-icon.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
 
-<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
+	<title>The Coders Online Grocery System</title>
+	<link rel="shortcut icon" href="images/logo.png" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/proStyle.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/chatStyle.css" type="text/css" media="screen" /> 
 
-	 <link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
-	 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-	
+	<script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cufon-yui.js" type="text/javascript"></script>
+	<script src="js/Myriad_Pro_700.font.js" type="text/javascript"></script>
+	<script src="js/jquery.jcarousel.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/functions.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+
 </head>
 <body>
-    <?php
-        include ("./header.php")
-    ?>
 
-<div class="shopping-cart"  id="cart" id="right" >
-	<dl id="acc">	
-		<dt class="active">								
-			<p class="shopping" >Shopping Cart &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-			</dt>
-			<dd class="active" style="display: block;">
 <?php
-   //current URL of the Page. cart_update.php redirects back to this URL
-	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+        include ("./header.php")
+    	?>
 
-if(isset($_SESSION["cart_session"]))
-{
-    $total = 0;
-    $currency = '$';
-    echo '<ul>';
-    foreach ($_SESSION["cart_session"] as $cart_itm)
-    {
-        echo '<li class="cart-itm">';
-        echo '<span class="remove-itm"><a href="cart_update.php?removep='.$cart_itm["code"].'&return_url='.$current_url.'">&times;</a></span>'."</br>";
-        echo '<h3  style="color: green" ><big> '.$cart_itm["name"].' </big></h3>';
-        echo '<div class="p-code"><b><i>ID:</i></b><strong style="color: #d7565b" ><big> '.$cart_itm["code"].' </big></strong></div>';
-		echo '<span><b><i>Shopping Cart</i></b>( <strong style="color: #d7565b" ><big> '.$cart_itm["TiradaProductTiga"].'</big></strong>) </span>';
-        echo '<div class="p-price"><b><i>Price:</b></i> <strong style="color: #d7565b" ><big>'.$currency.$cart_itm["Qiimaha"].'</big></strong></div>';
-        echo '</li>';
-        $subtotal = ($cart_itm["Qiimaha"]*$cart_itm["TiradaProductTiga"]);
-        $total = ($total + $subtotal) ."</br>"; 
-    }
-    echo '</ul>';
-    echo '<span class="check-out-txt"><strong style="color:green" ><i>Total:</i> <big style="color:green" >'.$currency.$total.'</big></strong> <a   class="a-btnjanan"  href="view_cart.php"> <span class="a-btn-text">Check Out</span></a></span>';
-	echo '&nbsp;&nbsp;<a   class="a-btnjanan"  href="cart_update.php?emptycart=1&return_url='.$current_url.'"><span class="a-btn-text">Clear Cart</span></a>';
-}else{
-    echo ' <h4>(Your Shopping Cart Is Empty!!!)</h4>';
-}
-?>
+		<div id="slider">
+			<div class="shell">
+				<ul class="slider-items">
+					<li>
+						<img src="images/h1.png" alt="Slide Image" />
+						<div class="slide-entry">
+							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
+						</div>
+					</li>
+					<li>
+						<img src="images/h2.png" alt="Slide Image" />
+						<div class="slide-entry">
+							<h4><span>Fresh</span><span class="small"></span> &nbsp; Vegetable</h4>
+							
+							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
+						</div>
+					</li>
+					<li>
+						<img src="images/h3.png" alt="Slide Image" />
+						<div class="slide-entry">
+							<h3><span>Black Suit</span><span class="small"> </span>Fresh<span class="small"> Seafood</span></h3> 
+					
+						
+							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
+						</div>
+					</li>
+							<li>
+						<img src="images/s4.png" alt="Slide Image" />
+						<div class="slide-entry">
+							<h3><span> Choose</span><span class="small"> Fresh</span>Fruits</h3> 
+							
+							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
+						</div>
+					</li>
+					<li>
+						<img src="images/s5.png" alt="Slide Image" />
+						<div class="slide-entry">
+							<h4><span>Some Fruits</span><span class="small">&amp;</span><span>Fresh</span>Crops</h4>
+							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
+						</div>
+					</li>
+					<li>
+						<img src="images/s6.png" alt="Slide Image" />
+						<div class="slide-entry">
+							<h3><span>Smart Dress</span><span class="small">of </span> Male And Females Suits</h3> 
+					
+							
+							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
+						</div>
+					</li>
 
-			</dd>
-	</dl>
-</div>
+				</ul>
+				<div class="cl">&nbsp;</div>
+				<div class="slider-nav">
+					
+				</div>
+			</div>
+		</div>
 
+		<div id="main" class="shell">
+			<div id="content">
+				<div class="post">
+						<h2>Welcome!</h2>
+					<img src="images/logo.png" alt="Post Image" height="160" width="260"/>
+					You can be confident when you're shopping online with SomStore. Our Secure online shopping website encrypts your personal and financial information to ensure your order information is protected.We use industry standard 128-bit encryption. Our Secure online shopping website locks all critical information passed from you to us,
+                   such as personal information, in an encrypted envelope, making it extremely difficult for this information to be intercepted.. <a href="#" class="more" title="Read More">Read More</a></p>
+					<div class="cl">&nbsp;</div>
+				</div>
+			</div>
 
-<!--search and search button-->
-<div style="margin-top: 80px">
-    <form name="search_form" action="" method="post">
-        <input type="search" id="search" name="search" placeholder="Search..."
-            style="width: 40%">
-    </form>
-    <button onclick="searchFormValidate()" style="margin-top: 20px">Search</button>
-</div>
+			<div id="sidebar">
+				<ul>
+					<li class="widget">
+						<h2>TOP Warehouse</h2>
+						<div class="brands">
+							<ul>
+								<li><a href="warehouse_1.php" title="Brand 1"><img src="images/k.png" width="103" height="51" alt="Brand 1" /></a></li>
+								<li><a href="warehouse_2.php" title="Brand 2"><img src="images/b.png" width="103" height="51" alt="Brand 2" /></a></li>
+								<li><a href="warehouse_3.php" title="Brand 3"><img src="images/ab.png" width="103" height="51" alt="Brand 3" /></a></li>
+								<li><a href="warehouse_4.php" title="Brand 4"><img src="images/33.png" width="103" height="51" alt="Brand 4" /></a></li>
+							</ul>
+							<div class="cl">&nbsp;</div>
+						</div>
+						<a href="products.php" class="more" title="More Brands">All Products</a>
+					</li>
+				</ul>
+			</div>
 
-<!--Display Searched Products-->
-    <div id="search_result">
-        <?php
-            if (isset($_POST['search'])) {
-                echo "<h2><i>Search Result</i></h2>";
-
-                /* receive search word from search-box and query in database*/
-                $search = $_POST['search'];
-                $search = mysqli_real_escape_string($mysqli, $search);
-                $sql1 = "Select * From product WHERE productName LIKE " . "'%" . $search . "%'";
-                $result1 = $mysqli->query($sql1);
-                ?>
-
-                <?php
-                /*display, if there is a search word in db. otherwise display 'no match'*/
-                if ($result1->num_rows > 0) {
-
-                    if ($result1->num_rows > 0) {
-                        ?>
-                        <summary><h3>Products (<?php echo $result1->num_rows; ?> items)</h3></summary>
-                        <?php
-                        while ($row = mysqli_fetch_array($result1)) {
-                            echo "<div class='floating-box text-center'>";
-                            if ($row['productName'])
-                                echo "<img src='images/" . $row['Picture'] . "'  width='50'  height='50'>" . "<p><a style='color: red'>" .$row['productName']."<div>".$row['Description']."</div> $". $row['Price'] . "</a></p></div>";
-                        } ?>
-
-                        <?php
-                    }
-
-                } else {
-                    echo "No match!";
-                }
-                ?>
-                <?php
-            }
-        ?>
-    </div>
-
-		<!-- Begin Products -->
+			<div class="cl">&nbsp;</div>>
 			
 				<div id="products">
 				<h2>Featured Products</h2>
-                <div>Filter By</div>
-                    <div class="form-group">
-                        <!--fetch categories from database. -->
-                        <?php
-                        $results = $mysqli->query("SELECT * FROM category ORDER BY Category_ID ASC");
-                        if ($results) {
-
-                            //fetch results set as object and output HTML
-                            while($obj = $results->fetch_object())
-                            {
-                                echo '<input type="button" value="'.$obj->Category_Name.'" onclick="filterProduct('.$obj->Category_ID.')"></input>';
-
-                            }
-
-                        }
-                        ?>
-                        <input type="button" value="All" onclick="filterProduct(0)"/>
-                    </div>
 
 	      <div class="section group">
 		  
 		  <?php
-    //current URL of the Page. cart_update.php redirects back to this URL
+
 	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-    $currency = "$";
-    if($category_id == 0){
-        $results = $mysqli->query("SELECT * FROM product ORDER BY Product_ID ASC");
-    } else {
-        $results = $mysqli->query("SELECT * FROM product WHERE Category_ID='$category_id' ORDER BY Product_ID ASC");
-    }
-    if ($results) {
+    
+	$results = $mysqli->query("SELECT * FROM product ORDER BY Product_ID ASC");
+    if ($results) { 
 	
         //fetch results set as object and output HTML
         while($obj = $results->fetch_object())
@@ -168,9 +141,9 @@ if(isset($_SESSION["cart_session"]))
             echo '<div class="product-content"><h2><b>'.$obj->productName.'</b> </h2>';
             echo '<div class="product-desc">'.$obj->Description.'</div>';
             echo '<div class="product-info">';
-			echo '<p><span class="price"> Price:<big style="color:green">'.$currency.$obj->Price.'</big></span></p>';
+			echo '<p><span class="price"> Price: RM <big style="color:orange">'.$currency.$obj->Price.'</big></span></p>';
             echo 'Qty <input type="text" name="product_qty" value="1" size="3" />';
-			echo '<div class="button"><span><img src="images/cart.jpg" alt="" /><button class="cart-button add_to_cart" >Add to Cart</button></span> </div>';
+			echo '<div class="button"><span><img src="images/cart.jpg" alt="" /><button class="cart-button"  class="add_to_cart">Add to Cart</button></span> </div>';
 			echo '</div></div>';
             echo '<input type="hidden" name="Product_ID" value="'.$obj->Product_ID.'" />';
             echo '<input type="hidden" name="type" value="add" />';
@@ -182,37 +155,36 @@ if(isset($_SESSION["cart_session"]))
     }
     ?>
     </div>
-				<div class="cl">&nbsp;</div>
-			</div>
+	<div class="cl">&nbsp;</div>
+</div>
 			
-			<!-- End Products -->		
-    <?php
+
+<div id="product-slider">
+	<h2>Best Products</h2>
+		<ul>	
+		  	<?php
+			$result=mysqli_query($mysqli,"select * from product") or die (mysqli_error());
+			while($row=mysqli_fetch_array($result)){
+			?>
+				<li>
+					<a href="products.php" title="Product Link"><img src="images/<?php echo $row['Picture']?>" alt="IMAGES" /></a>
+						<div class="info">
+							<h4><b><?php echo $row['productName']?></b></h4>
+							<span class="number"><span>Price: <big style="color:orange">RM <?php echo $row['Price']?></big></span></span>
+					
+							<div class="cl">&nbsp;</div>	 
+						</div>
+				</li>
+					 <?php } ?>
+		</ul>
+		<div class="cl">&nbsp;</div>
+</div>
+	
+		</div>
+
+		<?php
         include ("./footer.php")
-    ?>
+    	?>
 
-<!-- JS FILES --> 
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/jquery.fancybox.pack.js"></script> 
-<script src="js/retina.min.js"></script> 
-<script src="js/modernizr.js"></script> 
-<script src="js/main.js"></script>
 </body>
-<script src="js/customers.js"></script>
-<script>
-    function searchFormValidate() {
-        var search = document.getElementById('search').value;
-        if (!search) {
-            alert('Please input word to search.');
-        } else {
-            document.forms['search_form'].submit();
-        }
-    }
-
-    function filterProduct(id) {
-        //alert(e.target.value);
-        window.location.href='./customerPage.php?categoryId='+id;
-    }
-</script>
 </html>
