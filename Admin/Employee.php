@@ -108,7 +108,7 @@ if (c==null || c=="")
 	<div id="form_wrapper" class="form_wrapper">
 		<table>
 			<form class="register active" id="myForm"action="empRegistration.php"  method="POST" >
-					<th colspan="3"><h2>Employee Information</h2> </th> 	
+					<th colspan="3"><h2>ADD NEW EMPLOYEE</h2> </th> 	
         <tr>
 			<td>  
 				<label>Full Name</label>

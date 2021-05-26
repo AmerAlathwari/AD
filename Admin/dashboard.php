@@ -52,7 +52,7 @@
 
     <h3>Administrator</h3>
     <ul class="toggle">
-        <li class="icn_add_user"><a href="#">Add Employee</a></li>
+        <li class="icn_add_user"><a href="Employee.php">Add Employee</a></li>
         <li class="icn_photo"><a href="addProduct.php">Add Product</a></li>
         <li class="icn_tags"><a href="addSupplier.php">Add Supplier</a></li>
         <li class="icn_new_article"><a href="addCategory.php">Add Category</a></li>

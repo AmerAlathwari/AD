@@ -10,18 +10,7 @@ include("../config.php");
 
 <head>
 	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>The Coders Online Grocery System</title>
-	<link rel="shortcut icon" href="../images/logo.png" />
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/flexslider.css">
-	<link rel="stylesheet" href="../css/jquery.fancybox.css">
-	<link rel="stylesheet" href="../css/main.css">
-	<link rel="stylesheet" href="../css/responsive.css">
-	<link rel="stylesheet" href="../css/animate.min.css">
-	<link rel="stylesheet" href="../css/font-icon.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
       
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
 	
@@ -181,7 +170,7 @@ include("../config.php");
 	<div id="form_wrapper" class="form_wrapper">
 		<table>
 			<form class="register active" id="myForm" action="insertCategory.php" method="POST" name="addEmployee" >
-				<th colspan="3"><h2>Add Category</h2> </th> 
+				<th colspan="3"><h2>ADD NEW CATEGORY</h2> </th> 
 				<tr>
 					<td>  
 						<label>Category Name</label>
