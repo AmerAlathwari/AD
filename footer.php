@@ -6,7 +6,9 @@
 						<div class="box-entry">
 							<img src="images/logo.png" alt="The Coders Store" width="100" height="100"/>
 								<h4>Don't forget to shop now! For any enquiries :</h4>
-								<p> Call: +603 5521 4421 OR Email : <a href="mailto:alyanasuha1@gmail.com"> grocery@thecoders.com </a></p>
+								<br>
+								<p> Call: +603 5521 4421</p>
+								<p> Email : <a href="mailto:alyanasuha1@gmail.com"> grocery@thecoders.com </a></p>
 							<div class="cl">&nbsp;</div>
 						</div>
 					</div>
@@ -28,15 +30,15 @@
 					<div class="box last-box">
 						<h2>Categories</h2>
 						<ul>
-							<li><a href="#" title="Clothes">Clothes</a></li>
-							<li><a href="#" title="Cleaning Material">Cleaning Material</a></li>
-							<li><a href="#" title="Fizzi Drinks">Fizzy Drinks</a></li>
-							<li><a href="#" title="Food Stuff">Food Stuff</a></li>
+							<li><a href="#" title="Vegetable">Vegetable</a></li>
+							<li><a href="#" title="Drinks">Drinks</a></li>
+							<li><a href="#" title="Fresh Seafood">Fresh Seafood</a></li>
+							<li><a href="#" title="Fruits">Fruits</a></li>
 						</ul>
 					</div>
 					<div class="cl">&nbsp;</div>
 					<div>
-					<p align="center">© 2021 All rights reserved. All Rights Reserved. Made with <i class="fa fa-heart pulse"></i> by The Coders Team</p>
+					<p align="center">Made by The Coders Team © 2021 All rights reserved. </p>
 				</div>
 				</div>
 			</div

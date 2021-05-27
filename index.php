@@ -4,111 +4,123 @@ include("config.php");
 $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 ?>
 
-<!doctype html>
-
-<html class="no-js" lang="">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Coders Online Grocery System</title>
-<link rel="shortcut icon" href="images/logo.png" />
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/flexslider.css">
-<link rel="stylesheet" href="css/jquery.fancybox.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/animate.min.css">
-<link rel="stylesheet" href="css/font-icon.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-	 <link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
-	 <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<title>The Coders Online Grocery System</title>
+	<link rel="shortcut icon" href="images/logo.png" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/proStyle.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/chatStyle.css" type="text/css" media="screen" /> 
+
+	<script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cufon-yui.js" type="text/javascript"></script>
+	<script src="js/Myriad_Pro_700.font.js" type="text/javascript"></script>
+	<script src="js/jquery.jcarousel.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/functions.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/main.js" type="text/javascript"></script>
+
 </head>
 
 <body>
 
-<section class="banner" role="banner">
-  <header align="center">
-    <div> <a class="logo" href="index.php"><img src="images/logo.png" alt="Home" width="80" height="80"></a>
-		<h3>The Coders Online Grocery System</h3>
-        <h4>Your No.1 Online Grocery Store</h4>
-      </div>
-  </header>
-</section>
+<div id="main">
 
-		<nav class="navigation" role="navigation">
-			<ul class="primary-nav">
-			  <li><a align="center" href="registerPage.php">Register</a></li>
-			  <li><a align="center" href="SignIn.php">Sign In</a></li>
-			</ul>
-		</nav>
-		  
-<div class="clear"></div>
+  <header>
+				<h1 ><a align="center"  class="logo" href="index.php"><img src="images/logo.png" alt="Home" width="100" height="100"></a></h1>
+        <div id="top-nav">
+					<ul>
+						<li > <a href="registerPage.php" title="Contact"> <span class="jananalibritish"> Register </span></a>  </li>
+					  <li class="janan"><a href="SignIn.php"><span class="jananalibritish"> Signin </span></a></li>
+					</ul>
+        </div>
+    </header>
+
+</div>
+<div id="content">
+  <div class="post" align="center">
+					<h1 >Welcome To The Coders Store</h1>
+					<br><h4>You can be confident when you're shopping online with The Coders Store. Due to the pandemic COVID-19, we are aware that people shift to online shopping to avoid gathering,
+          Thus, we are here to provide you the best solution for you to shop online. We also provide pickup, so that you can should and pickup your groceries within few minutes.
+          Shop with us! Cheap and save your time!</h4>
+
+			<div class="cl">&nbsp;</div>
+	</div>		
+</div>
+        
+<div id="main" class="shell">
+			<div id="content">
+      <div id="content">
+
+			</div>
 			</div>
 
 
-		<!-- Begin Products -->
-			
-				<div id="products">
+
+				<div class="cl">&nbsp;</div>
+
+      <div id="products">
 				<h2>Featured Products</h2>
 
 	      <div class="section group">
 		  
 		  <?php
-    //current URL of the Page. cart_update.php redirects back to this URL
-	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-    $currency = "$";
-    if($category_id == 0){
-        $results = $mysqli->query("SELECT * FROM product ORDER BY Product_ID ASC");
-    } else {
-        $results = $mysqli->query("SELECT * FROM product WHERE Category_ID='$category_id' ORDER BY Product_ID ASC");
-    }
-    if ($results) {
+
+    
+	$results = $mysqli->query("SELECT * FROM product ORDER BY Product_ID ASC");
+    if ($results) { 
 	
         //fetch results set as object and output HTML
         while($obj = $results->fetch_object())
         {
 			echo '<div class="grid_1_of_4 images_1_of_4">'; 
-			echo '<div class="product-thumb"><img src="images/'.$obj->Picture.'" ></div>';
+            echo '<form method="post">';
+			echo '<div class="product-thumb"><img href="SignIn.php" src="images/'.$obj->Picture.'"></div>';
             echo '<div class="product-content"><h2><b>'.$obj->productName.'</b> </h2>';
             echo '<div class="product-desc">'.$obj->Description.'</div>';
             echo '<div class="product-info">';
-			echo '<p><span class="price"> Price:<big style="color:green">'.$currency.$obj->Price.'</big></span></p>';
+			echo '<p><span class="price"> Price: RM <big style="color:orange">'.$obj->Price.'</big></span></p>';
+			echo '</div></div>';
+            echo '</form>';
             echo '</div>';
         }
     
     }
     ?>
     </div>
-				<div class="cl">&nbsp;</div>
-			</div>
+	<div class="cl">&nbsp;</div>
+</div>
 			
-			<!-- End Products -->		
-<!-- service section -->
-<section id="service" class="service section">
-  <div class="container">
-    <div class="row" align="center">
-      <div>
-        <h4>Quality Groceries At An Affordable Price</h4>
-		<p>Your freshly handpicked groceries & delivered from favourite supermarket to your home! Fresh produce, household, dairy and more.</p>
-        <p>Stay Home & Safe While We Deliver To You. Complimentary Cutting Services. Shop Online Today And Guaranteed Next Day Delivery</p>
-      </div>
-    </div>
-  </div>
-</section>
+
+<div id="product-slider">
+	<h2>Best Products</h2>
+		<ul>	
+		  	<?php
+			$result=mysqli_query($mysqli,"select * from product") or die (mysqli_error());
+			while($row=mysqli_fetch_array($result)){
+			?>
+				<li>
+					<a href="products.php" title="Product Link"><img src="images/<?php echo $row['Picture']?>" alt="IMAGES" /></a>
+						<div class="info">
+							<h4><b><?php echo $row['productName']?></b></h4>
+							<span class="number"><span>Price: <big style="color:orange">RM <?php echo $row['Price']?></big></span></span>
+					
+							<div class="cl">&nbsp;</div>	 
+						</div>
+				</li>
+					 <?php } ?>
+		</ul>
+		<div class="cl">&nbsp;</div>
+</div>
+	
+		</div>
+
 
     <?php
         include ("./footer.php")
     ?>
 
-<!-- JS FILES --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/jquery.fancybox.pack.js"></script> 
-<script src="js/retina.min.js"></script> 
-<script src="js/modernizr.js"></script> 
-<script src="js/main.js"></script>
 </body>
 </html>

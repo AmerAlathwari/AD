@@ -27,9 +27,53 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 <body>
 
 <?php
-        include ("./header.php")
+    include ("./header.php")
     	?>
 
+	<div class="shopping-cart"  id="cart" id="right" >
+		<dl id="acc">	
+			<dt class="active">								
+				<p class="shopping" >Shopping Cart &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+			</dt>
+		<dd class="active" style="display: block;">
+		
+<?php
+
+	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+
+if(isset($_SESSION["cart_session"]))
+{
+    $total = 0;
+    echo '<ul>';
+    foreach ($_SESSION["cart_session"] as $cart_itm)
+    {
+        echo '<li class="cart-itm">';
+        echo '<span class="remove-itm"><a href="cartUpdate.php?removep='.$cart_itm["code"].'&return_url='.$current_url.'">&times;</a></span>'."</br>";
+        echo '<h3  style="color: green" ><big> '.$cart_itm["name"].' </big></h3>';
+        echo '<div class="p-code"><b><i>ID:</i></b><strong style="color: #d7565b" ><big> '.$cart_itm["code"].' </big></strong></div>';
+		echo '<span><b><i>Shopping Cart</i></b>( <strong style="color: #d7565b" ><big> '.$cart_itm["TiradaProductTiga"].'</big></strong>) </span>';
+        echo '<div class="p-price"><b><i>Price:</b></i> <strong style="color: #d7565b" ><big>'.$currency.$cart_itm["Qiimaha"].'</big></strong></div>';
+        echo '</li>';
+        $subtotal = ($cart_itm["Qiimaha"]*$cart_itm["TiradaProductTiga"]);
+        $total = ($total + $subtotal) ."</br>"; 
+    }
+    echo '</ul>';
+    echo '<span class="check-out-txt"><strong style="color:orange" ><i>Total: RM </i> <big style="color:orange" >'.$currency.$total.'</big></strong> <a   class="a-btnjanan"  href="view_cart.php"> <span class="a-btn-text">Check Out</span></a></span>';
+	echo '&nbsp;&nbsp;<a   class="a-btnjanan"  href="cartUpdate.php?emptycart=1&return_url='.$current_url.'"><span class="a-btn-text">Clear Cart</span></a>';
+}else{
+    echo ' <br><br><h4 style="color:grey" align="center" >Shopping Car is empty</h4>';
+}
+?>
+
+</dd>
+</dl>
+</div>
+</div>
+
+ <div class="clear"></div>
+			</div>
+		</div>
+		
 		<div id="slider">
 			<div class="shell">
 				<ul class="slider-items">
@@ -40,43 +84,34 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 						</div>
 					</li>
 					<li>
-						<img src="images/h2.png" alt="Slide Image" />
+						<img src="images/onlineshop.png" alt="Slide Image" />
 						<div class="slide-entry">
-							<h4><span>Fresh</span><span class="small"></span> &nbsp; Vegetable</h4>
-							
+
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
 					</li>
 					<li>
 						<img src="images/h3.png" alt="Slide Image" />
 						<div class="slide-entry">
-							<h3><span>Black Suit</span><span class="small"> </span>Fresh<span class="small"> Seafood</span></h3> 
-					
-						
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
 					</li>
 							<li>
-						<img src="images/s4.png" alt="Slide Image" />
+						<img src="images/h2.png" alt="Slide Image" />
 						<div class="slide-entry">
-							<h3><span> Choose</span><span class="small"> Fresh</span>Fruits</h3> 
-							
+
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
 					</li>
 					<li>
-						<img src="images/s5.png" alt="Slide Image" />
+						<img src="images/h23.jpg" alt="Slide Image" />
 						<div class="slide-entry">
-							<h4><span>Some Fruits</span><span class="small">&amp;</span><span>Fresh</span>Crops</h4>
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
 					</li>
 					<li>
-						<img src="images/s6.png" alt="Slide Image" />
-						<div class="slide-entry">
-							<h3><span>Smart Dress</span><span class="small">of </span> Male And Females Suits</h3> 
-					
-							
+						<img src="images/s6.jpg" alt="Slide Image" />
+						<div class="slide-entry"> 
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
 					</li>
@@ -91,33 +126,8 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 
 		<div id="main" class="shell">
 			<div id="content">
-				<div class="post">
-						<h2>Welcome!</h2>
-					<img src="images/logo.png" alt="Post Image" height="160" width="260"/>
-					You can be confident when you're shopping online with SomStore. Our Secure online shopping website encrypts your personal and financial information to ensure your order information is protected.We use industry standard 128-bit encryption. Our Secure online shopping website locks all critical information passed from you to us,
-                   such as personal information, in an encrypted envelope, making it extremely difficult for this information to be intercepted.. <a href="#" class="more" title="Read More">Read More</a></p>
-					<div class="cl">&nbsp;</div>
-				</div>
+				
 			</div>
-
-			<div id="sidebar">
-				<ul>
-					<li class="widget">
-						<h2>TOP Warehouse</h2>
-						<div class="brands">
-							<ul>
-								<li><a href="warehouse_1.php" title="Brand 1"><img src="images/k.png" width="103" height="51" alt="Brand 1" /></a></li>
-								<li><a href="warehouse_2.php" title="Brand 2"><img src="images/b.png" width="103" height="51" alt="Brand 2" /></a></li>
-								<li><a href="warehouse_3.php" title="Brand 3"><img src="images/ab.png" width="103" height="51" alt="Brand 3" /></a></li>
-								<li><a href="warehouse_4.php" title="Brand 4"><img src="images/33.png" width="103" height="51" alt="Brand 4" /></a></li>
-							</ul>
-							<div class="cl">&nbsp;</div>
-						</div>
-						<a href="products.php" class="more" title="More Brands">All Products</a>
-					</li>
-				</ul>
-			</div>
-
 			<div class="cl">&nbsp;</div>>
 			
 				<div id="products">
@@ -136,8 +146,8 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
         while($obj = $results->fetch_object())
         {
 			echo '<div class="grid_1_of_4 images_1_of_4">'; 
-            echo '<form method="post" action="cart_update.php">';
-			echo '<div class="product-thumb"><img src="images/'.$obj->Picture.'"></div>';
+            echo '<form method="post" action="cartUpdate.php">';
+			echo '<div class="product-thumb" ><img src="images/'.$obj->Picture.'"></div>';
             echo '<div class="product-content"><h2><b>'.$obj->productName.'</b> </h2>';
             echo '<div class="product-desc">'.$obj->Description.'</div>';
             echo '<div class="product-info">';
@@ -177,7 +187,7 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 				</li>
 					 <?php } ?>
 		</ul>
-		<div class="cl">&nbsp;</div>
+	<div class="cl">&nbsp;</div>
 </div>
 	
 		</div>
