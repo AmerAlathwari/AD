@@ -1,5 +1,5 @@
 <?php
-session_start();
+include("usersession.php");
 include("config.php");
 
 ?>
@@ -7,13 +7,12 @@ include("config.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
-	<title> Somstore Group </title>
+	<title>The Coders Online Grocery System</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="css/proStyle.css" type="text/css" media="all" />
-	 	<link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
-	<link rel="shortcut icon" href="images/favicon.png" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/proStyle.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
+	<link rel="shortcut icon" href="images/logo.png" />
 	<script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
 
 	<script src="js/cufon-yui.js" type="text/javascript"></script>
@@ -27,161 +26,9 @@ include("config.php");
 	
 </head>
 <body>
-	<!-- Begin Wrapper -->
-	<div id="wrapper">
-		<!-- Begin Header -->
-		<div id="header">
-			<!-- Begin Shell -->
-			<div class="shell">
-				<h1 id="logo"><a class="notext" href="#" title="Somstore">Somstore</a></h1>
-				<div id="top-nav">
-					<ul>
-					
-						<li><a href="contact.php" title="Contact"><span>Contact</span></a></li>
-						<li><a href="Sign In.php" title="Sign In"><span>Sign In</span></a></li>
-					</ul>
-				</div>
-				<div class="cl">&nbsp;</div>
-<div class="shopping-cart"  id="cart" id="right" >
-<dl id="acc">	
-<dt class="active">								
-<p class="shopping" >Shopping Cart &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-</dt>
-<dd class="active" style="display: block;">
 <?php
-   //current URL of the Page. cart_update.php redirects back to this URL
-	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-
-if(isset($_SESSION["cart_session"]))
-{
-    $total = 0;
-    echo '<ul>';
-    foreach ($_SESSION["cart_session"] as $cart_itm)
-    {
-        echo '<li class="cart-itm">';
-        echo '<span class="remove-itm"><a href="cart_update.php?removep='.$cart_itm["code"].'&return_url='.$current_url.'">&times;</a></span>'."</br>";
-        echo '<h3  style="color: green" ><big> '.$cart_itm["name"].' </big></h3>';
-        echo '<div class="p-code"><b><i>ID:</i></b><strong style="color: #d7565b" ><big> '.$cart_itm["code"].' </big></strong></div>';
-		echo '<span><b><i>Shopping Cart</i></b>( <strong style="color: #d7565b" ><big> '.$cart_itm["TiradaProductTiga"].'</big></strong>) </span>';
-        echo '<div class="p-price"><b><i>Price:</b></i> <strong style="color: #d7565b" ><big>'.$currency.$cart_itm["Qiimaha"].'</big></strong></div>';
-        echo '</li>';
-        $subtotal = ($cart_itm["Qiimaha"]*$cart_itm["TiradaProductTiga"]);
-        $total = ($total + $subtotal); 
-    }
-    echo '</ul>';
-    echo '<span class="check-out-txt"><strong style="color:green" ><i>Total:</i> <big style="color:green" >'.$currency.$total.'</big></strong> <a   class="a-btnjanan"  href="view_cart.php"> <span class="a-btn-text">Check Out</span></a></span>';
-	echo '&nbsp;&nbsp;<a   class="a-btnjanan"  href="cart_update.php?emptycart=1&return_url='.$current_url.'"><span class="a-btn-text">Clear Cart</span></a>';
-}else{
-    echo ' <h4>(Your Shopping Cart Is Empty!!!)</h4>';
-}
-?>
-
-</dd>
-</dl>
-</div>
- <div class="clear"></div>
-			</div>
-			<!-- End Shell -->
-		</div>
-		<!-- End Header -->
-	<!-- Begin Navigation -->
-		<div id="navigation">
-			<!-- Begin Shell -->
-			<div class="shell">
-				<ul>
-					<li class="active"><a href="index.php" title="index.php">Home</a></li>
-					<li>
-						<a href="products.php">Category</a>
-						<div class="dd">
-							<ul>
-								<li>
-									 <a href="warehouse_1.php"> FoodStuff</a>
-									<div class="dd">
-										<ul>
-											<li><a href="warehouse_1.php">Fruits</a></li>
-                                            <li><a href="warehouse_1.php">Biscuits</a></li>
-										</ul>
-									</div>
-								</li>
-								
-								<li>
-									 <a href="warehouse_2.php"> Beverage</a>
-									<div class="dd">
-										<ul>
-											  <li><a href="warehouse_2.php">Bavaria</a></li>
-                                             <li><a href="warehouse_2.php">Reddbull</a></li>
-										</ul>
-									</div>
-								</li>
-								
-								<li>
-									<a href="warehouse_3.php"> Cleaning Material</a>
-									<div class="dd">
-										<ul>
-											<li><a href="warehouse_3.php">Fairy</a></li>
-                                            <li><a href="warehouse_3.php">Harpic</a></li>
-										</ul>
-									</div>
-								</li>
-								
-								<li>
-									<a href="warehouse_4.php"> Clothes</a>
-									<div class="dd">
-										<ul>
-											  <li><a href="warehouse_4.php">Suit</a></li>
-                                              <li><a href="warehouse_4.php">T.shirts</a></li>
-										</ul>
-									</div>
-								</li>
-								
-							</ul>
-						</div>
-					</li>
-					   <li><a href="products.php"> Products</a></li>
-					   	   <li>
-						<a href="products.php">Warehouse</a>
-						<div class="dd">
-							  	   <li>
-						<a href="products.php">Warehouse</a>
-						<div class="dd">
-							<ul>
-								<li>
-									 <a href="warehouse_1.php">Som Food Staff</a>
-									
-								</li>
-								
-								<li>
-									 <a href="warehouse_2.php">Som Beverages</a>
-									
-								</li>
-								
-								<li>
-									<a href="warehouse_3.php">Som House Staff</a>
-									
-								</li>
-								
-								<li>
-									<a href="warehouse_4.php">Som Clothes</a>
-									
-								</li>
-								
-							</ul>
-						</div>
-					</li>
-						</div>
-					</li>
-					  <li><a href="about.php">About Us</a></li>
-					  <li><a href="customer.php">Free Sign Up</a> </li>
-				</ul>
-				<div class="cl">&nbsp;</div>
-			</div>
-			<!-- End Shell -->
-		</div>
-		<!-- End Navigation -->
-
-		<!-- Begin Main -->
-		<div id="main" class="shell">
-     <br>
+    include ("./header.php")
+    	?>
 	
 <div class="viewcart">
  	<?php
@@ -222,7 +69,7 @@ if(isset($_SESSION["cart_session"]))
 			echo '<td><h3>'.$obj->productName.' (Code :'.$Product_ID.')</h3></td> ';
             echo '<td class="p-qty">Qty :<input type="text" name="product_qty" value="'.$cart_itm["TiradaProductTiga"].'" size="2"   maxlength="5" /></td>';
             echo '<td>'.$obj->Description.'</td>';
-		    echo '<td class="p-price" style="color:green"><b>'.$currency.$obj->Price.'</b></td>';
+		    echo '<td class="p-price" style="color:green"><b>'.$obj->Price.'</b></td>';
 			echo '<td><span class="remove-check"><a href="cart_update.php?removep='.$cart_itm["code"].'&return_url='.$current_url.'">&times;</a></span></td>';
             echo '</tr>';
 			$subtotal = ($cart_itm["Qiimaha"]*$cart_itm["TiradaProductTiga"]);
@@ -242,11 +89,8 @@ if(isset($_SESSION["cart_session"]))
 		echo '<span class="check-out-txt">';
 
     	echo '</table>';
-		echo '<span> <h4 class="pricewayn"> Grand Total : <big style="color:green">'.$currency.$total.'</big> </h4></span> ';
-		echo '<spa class="midigta"><a  class="a-btn" href="Somstore checkout/zaadprocess.php"><span class="a-btn-text">Proced On Zaad</span> </a></span>';
-		
-		echo '<span class="midigta"> <a  class="a-btn" href="Somstore checkout/process.php"> <span class="a-btn-text"> Pay On SomStore</span></a></span>';
-		echo '</span>';
+		echo '<span> <h4 class="pricewayn"> Grand Total : RM<big style="color:green">'.$total.'</big> </h4></span> ';
+
 		echo '</form>'; 
 
    }else{        
@@ -257,11 +101,9 @@ if(isset($_SESSION["cart_session"]))
     </div><br><br><br>
 
 			
-				<!-- Begin Products Slider -->
-			<div id="product-slider">
-				<h2>Best Products</h2>
-				<ul>
-				
+<div id="product-slider">
+	<h2>Best Products</h2>
+		<ul>	
 		  	<?php
 			$result=mysqli_query($mysqli,"select * from product") or die (mysqli_error());
 			while($row=mysqli_fetch_array($result)){
@@ -270,7 +112,7 @@ if(isset($_SESSION["cart_session"]))
 						<a href="products.php" title="Product Link"><img src="images/<?php echo $row['Picture']?>" alt="IMAGES" /></a>
 						<div class="info">
 							<h4><b><?php echo $row['productName']?></b></h4>
-							<span class="number"><span>Price:<big style="color:green">$<?php echo $row['Price']?></big></span></span>
+							<span class="number"><span>Price:<big style="color:green">RM<?php echo $row['Price']?></big></span></span>
 					
 							<div class="cl">&nbsp;</div>
 							 
@@ -279,28 +121,12 @@ if(isset($_SESSION["cart_session"]))
 					 <?php } ?>
 				</ul>
 				<div class="cl">&nbsp;</div>
-			</div>
-			<!-- End Products Slider -->		
+			</div>		
 			<br> <br> <br> <br> 
-			<!-- Begin Content -->
-			<div id="content">
-				<div class="post">
-					<h2>Welcome!</h2>
-					<img src="images/logo.png" alt="Post Image" height="160" width="260"/>
-					You can be confident when you're shopping online with SomStore. Our Secure online shopping website encrypts your personal and financial information to ensure your order information is protected.We use industry standard 128-bit encryption. Our Secure online shopping website locks all critical information passed from you to us,
-                   such as personal information, in an encrypted envelope, making it extremely difficult for this information to be intercepted.. <a href="#" class="more" title="Read More">Read More</a></p>
-					<div class="cl">&nbsp;</div>
-				</div>
-			</div>
-			<!-- End Content -->
-
-			<div class="cl">&nbsp;</div>
 			
-			
-		</div>
-		<!-- End Main -->
-
-	</div>
-	<!-- End Wrapper -->
+			</div>	
+			<?php
+        include ("./footer.php")
+    	?>
 </body>
 </html>
