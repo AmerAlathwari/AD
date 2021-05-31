@@ -188,7 +188,7 @@ include("../config.php");
 			   
 						<td>  
 
-							<label> Model</label>
+							<label>Brand</label>
 							<input type="text"  name="model"  id="model"  required> 
 							<span id="pass-info"> </span>				   
 						</td>
@@ -197,12 +197,12 @@ include("../config.php");
 					<tr>
 						<td> 
 						   
-							<label> Type</label>
+							<label>Type</label>
 							<input type="text" name="type" id="type"  required>
 							<span id="pass-info"> </span>
 						</td>
 						<td> 
-							<label> Warehouse:</label>
+							<label>Supplier</label>
 								<?php
 								include('../config.php');
 								$name= mysqli_query($mysqli,"select * from warehouse");
@@ -224,8 +224,8 @@ include("../config.php");
 						</td>
 				
 						<td>   
-							<label> Description</label>
-							<input type="text"  name="ml"  id="ml"  maxlength="19" required> 
+							<label>Description</label>
+							<input type="text"  name="ml"  id="ml"  maxlength="50" required> 
 							<span id="pass-info"> </span>
 						</td>
 					</tr>
@@ -241,7 +241,7 @@ include("../config.php");
 						</td>
 						<td>   
 
-							<label> Picture</label>
+							<label>Picture</label>
 							<input type="file" name="picture" id="picture"  required>
 							<span class="error">This is an error</span>
 						</td>
@@ -302,14 +302,14 @@ include("../config.php");
 				</tr>
 					<th>Check</th> 
 					<th>ID</th>
-					<th> Name</th>			  
+					<th>Name</th>			  
 					<th>Category</th>
-					<th>Model</th>				
-					<th> Type</th>
+					<th>Brand</th>				
+					<th>Type</th>
 					<th>WareHouse</th>				
-					<th> Description</th>
+					<th>Description</th>
 					<th>Price</th>				
-					<th> Picture</th>
+					<th>Picture</th>
 					<th>Actions</th>
 				</tr>
 			</thead>

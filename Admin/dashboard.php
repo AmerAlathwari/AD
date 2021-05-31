@@ -11,11 +11,6 @@
 
              <nav align="center" ><!-- Defining the navigation menu -->
                 <ul >
-                    <li class="selected"><a href="index.php">Home</a></li>
-                    <li><a href="addSupplier.php">Supplier</a></li>
-                    <li><a href="addProduct.php">Product</a></li>
-                    <li><a href="Employee.php">Employee</a></li>
-                    <li><a href="addCategory.php">Categories</a></li>
 					<li class="logout"> <a href="../logout.php">Logout</a></li>
                     <li class="logout"> <span class="check"> <?php echo "Welcome Mr/Miss:   ". "<font color='##fa5400'><i><b>".$login_session."</b></i></font>" ;?> </span></li>
 					
