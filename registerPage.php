@@ -1,42 +1,38 @@
-<!doctype html>
-
-<html class="no-js" lang="">
-
-<head>
-<meta charset="utf-8">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Coders Online Grocery System</title>
-<link rel="shortcut icon" href="images/logo.png" />
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/flexslider.css">
-<link rel="stylesheet" href="css/jquery.fancybox.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/animate.min.css">
-<link rel="stylesheet" href="css/font-icon.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/AnimateLogo.css" />
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-
+<!DOCTYPE html>
+ <html lang="en" class="no-js">
+    <head>
+    <meta charset="UTF-8" />
+    <title>Login and Registration Form</title>
+    <link rel="shortcut icon" href="images/logo.png" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/proStyle.css" type="text/css" media="all" />
+	
 
 </head>
 <body>
-<!-- header top section -->
-<section class="banner" role="banner">
-  <header align="center">
-    <div> <a class="logo" href="index.php"><img src="images/logo.png" alt="Home" width="80" height="80"></a>
-		<h3>SignUp Page</h3>
-		<h4>Please Register Your Account Now !</h4>
-	  </div>
-  </header>
-</section>
+<br><div id="main">
 
+<header>
+	<h1 ><a align="center"  class="logo" href="index.php"><img src="images/logo.png" alt="Home" width="100" height="100"></a></h1>
+        <div id="top-nav">
+			<ul>
+				 <li class="janan"><a href="SignIn.php"><span class="jananalibritish"> Signin </span></a></li>
+			</ul>
+        </div>
+</header>
+<br>
 
-	<body>
-		<div id="main" class="shell">
+<div id="content">
+  <div class="post" align="center">
+					<h1 >Registration Form</h1>
+					<br><h4>Please Register Your Account Now</h4>
+			<div class="cl">&nbsp;</div>
+	</div>		
+</div>
+</div>
+
+		<section>
 			<div id="content">
-	
 				<script type="text/javascript">
 				$(document).ready(function() { 
 
@@ -63,8 +59,7 @@
 				});
 
 				</script>
-
-									
+			
 				<div id="form_wrapper" class="form_wrapper">
 					<table>
 						<form  class="register active"  id="myForm" method="POST" action="insertCustomer.php">
@@ -153,20 +148,14 @@
 					</table>
 				</div>
 			</div>
-		<!-- End Content -->
 		</div>
-    </body>
-	
+	</section>
+	<div class="cl">&nbsp;</div>
+</div>
+<br><br>
 	<?php
         include ("./footer.php")
     ?>
 
-<!-- JS FILES --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/jquery.fancybox.pack.js"></script> 
-<script src="js/retina.min.js"></script> 
-<script src="js/modernizr.js"></script> 
-<script src="js/main.js"></script>
 </body>
 </html>

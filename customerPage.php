@@ -14,7 +14,6 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/proStyle.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="css/chatStyle.css" type="text/css" media="screen" /> 
 
 	<script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/cufon-yui.js" type="text/javascript"></script>
@@ -29,50 +28,6 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 <?php
     include ("./header.php")
     	?>
-
-	<div class="shopping-cart"  id="cart" id="right" >
-		<dl id="acc">	
-			<dt class="active">								
-				<p class="shopping" >Shopping Cart &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-			</dt>
-		<dd class="active" style="display: block;">
-		
-<?php
-
-	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-
-if(isset($_SESSION["cart_session"]))
-{
-    $total = 0;
-    echo '<ul>';
-    foreach ($_SESSION["cart_session"] as $cart_itm)
-    {
-        echo '<li class="cart-itm">';
-        echo '<span class="remove-itm"><a href="cartUpdate.php?removep='.$cart_itm["code"].'&return_url='.$current_url.'">&times;</a></span>'."</br>";
-        echo '<h3  style="color: green" ><big> '.$cart_itm["name"].' </big></h3>';
-        echo '<div class="p-code"><b><i>ID:</i></b><strong style="color: #d7565b" ><big> '.$cart_itm["code"].' </big></strong></div>';
-		echo '<span><b><i>Shopping Cart</i></b>( <strong style="color: #d7565b" ><big> '.$cart_itm["TiradaProductTiga"].'</big></strong>) </span>';
-        echo '<div class="p-price"><b><i>Price:</b></i> <strong style="color: #d7565b" ><big>'.$currency.$cart_itm["Qiimaha"].'</big></strong></div>';
-        echo '</li>';
-        $subtotal = ($cart_itm["Qiimaha"]*$cart_itm["TiradaProductTiga"]);
-        $total = ($total + $subtotal) ."</br>"; 
-    }
-    echo '</ul>';
-    echo '<span class="check-out-txt"><strong style="color:orange" ><i>Total: RM </i> <big style="color:orange" >'.$currency.$total.'</big></strong> <a   class="a-btnjanan"  href="view_cart.php"> <span class="a-btn-text">Check Out</span></a></span>';
-	echo '&nbsp;&nbsp;<a   class="a-btnjanan"  href="cartUpdate.php?emptycart=1&return_url='.$current_url.'"><span class="a-btn-text">Clear Cart</span></a>';
-}else{
-    echo ' <br><br><h4 style="color:grey" align="center" >Shopping Car is empty</h4>';
-}
-?>
-
-</dd>
-</dl>
-</div>
-</div>
-
- <div class="clear"></div>
-			</div>
-		</div>
 		
 		<div id="slider">
 			<div class="shell">
@@ -128,15 +83,15 @@ if(isset($_SESSION["cart_session"]))
 			<div id="content">
 				
 			</div>
-			<div class="cl">&nbsp;</div>>
-			
-				<div id="products">
+			<div class="cl">&nbsp;</div>
+
+			<div id="products">
 				<h2>Featured Products</h2>
 
 	      <div class="section group">
 		  
 		  <?php
-
+    //current URL of the Page. cart_update.php redirects back to this URL
 	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
     
 	$results = $mysqli->query("SELECT * FROM product ORDER BY Product_ID ASC");
@@ -146,12 +101,12 @@ if(isset($_SESSION["cart_session"]))
         while($obj = $results->fetch_object())
         {
 			echo '<div class="grid_1_of_4 images_1_of_4">'; 
-            echo '<form method="post" action="cartUpdate.php">';
-			echo '<div class="product-thumb" ><img src="images/'.$obj->Picture.'"></div>';
+            echo '<form method="post" action="cart_update.php">';
+			echo '<div class="product-thumb"><img src="images/'.$obj->Picture.'"></div>';
             echo '<div class="product-content"><h2><b>'.$obj->productName.'</b> </h2>';
             echo '<div class="product-desc">'.$obj->Description.'</div>';
             echo '<div class="product-info">';
-			echo '<p><span class="price"> Price: RM <big style="color:orange">'.$currency.$obj->Price.'</big></span></p>';
+			echo '<p><span class="price"> Price: <big style="color:green">'.$currency.$obj->Price.'</big></span></p>';
             echo 'Qty <input type="text" name="product_qty" value="1" size="3" />';
 			echo '<div class="button"><span><img src="images/cart.jpg" alt="" /><button class="cart-button"  class="add_to_cart">Add to Cart</button></span> </div>';
 			echo '</div></div>';
@@ -165,8 +120,9 @@ if(isset($_SESSION["cart_session"]))
     }
     ?>
     </div>
-	<div class="cl">&nbsp;</div>
-</div>
+				<div class="cl">&nbsp;</div>
+			</div>
+			
 			
 
 <div id="product-slider">

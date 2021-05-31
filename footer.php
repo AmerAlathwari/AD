@@ -37,11 +37,10 @@
 						</ul>
 					</div>
 					<div class="cl">&nbsp;</div>
-					<div>
-					<p align="center">Made by The Coders Team © 2021 All rights reserved. </p>
+						<div>
+							<p align="center">Made by The Coders Team © 2021 All rights reserved. </p>
+						</div>
+					</div>
 				</div>
-				</div>
-			</div
-
 			</div>
-		</div>
+</div>
