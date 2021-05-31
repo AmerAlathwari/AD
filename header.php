@@ -4,8 +4,17 @@
 			<br><br><h1>THE CODERS ONLINE GROCERY STORE</h1>
 			<div id="top-nav">
 				<ul>
+					<li>    
+						<div id="search">
+        					<form action="#" method="post" accept-charset="utf-8">
+            					<input type="text"  title="Search..." class="blink field"  placeholder="Search Product"   name='search' size=60 maxlength=100 />
+            					<input class="search-button" type="submit" value="Submit" />
+            				<div class="cl">&nbsp;</div>
+        					</form>
+    					</div>
+					</li>
+
 					<li><a href="#" title="Login Email"> <span class="janan"> <?php echo "Your Email Is: ". "<i><b>".$login_session."</b></i>" ;?> </span></a></li>
-					<li > <a href="contact.php" title="Contact"> <span class="jananalibritish"> Contact  </span></a>  </li>
 					<li class="janan"><a href="logout.php"><span class="jananalibritish">Logout </span></a></li>
 				</ul>
 			</div>
@@ -21,7 +30,7 @@
 					<li><a href="profile.php" >PROFILE</a></li>
 					<li><a href="contact.php" >Contact Us</a></li>
 					<li><a href="faq.php" >FAQ</a></li>
-					
+
 				</ul>
 <?php
 
