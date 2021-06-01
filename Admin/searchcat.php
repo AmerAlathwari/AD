@@ -25,20 +25,20 @@ include("../config.php");
 	);
 	$(document).ready(function() {
 
-	//When page loads...
-	$(".tab_content").hide(); //Hide all content
-	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
-	$(".tab_content:first").show(); //Show first tab content
+	
+	$(".tab_content").hide(); 
+	$("ul.tabs li:first").addClass("active").show(); 
+	$(".tab_content:first").show(); 
 
-	//On Click Event
+
 	$("ul.tabs li").click(function() {
 
-		$("ul.tabs li").removeClass("active"); //Remove any "active" class
-		$(this).addClass("active"); //Add "active" class to selected tab
-		$(".tab_content").hide(); //Hide all tab content
+		$("ul.tabs li").removeClass("active"); 
+		$(this).addClass("active"); 
+		$(".tab_content").hide(); 
 
-		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
-		$(activeTab).fadeIn(); //Fade in the active ID content
+		var activeTab = $(this).find("a").attr("href"); 
+		$(activeTab).fadeIn(); 
 		return false;
 	});
 
@@ -83,7 +83,7 @@ include("../config.php");
                     this.value = this.value.replace(/[^0-9,./g, '');
 					
                 }
-				Alart("Numbers IS NOT Allowed Sir!!!!!! !!!");
+				Alart("Numbers is NOT Allowed. Please re-enter your data");
             });
         });
     </script>
@@ -96,7 +96,7 @@ include("../config.php");
                     this.value = this.value.replace(/[^a-zA-Z ]/g, '');
 					
                 }
-				Alart("Numbers IS NOT Allowed Sir!!!!!! !!!");
+				Alart("Numbers is NOT Allowed. Please re-enter your data");
             });
         });
     </script>
@@ -146,20 +146,19 @@ $(document).ready(function(){
 	);
 	$(document).ready(function() {
 
-	//When page loads...
-	$(".tab_content").hide(); //Hide all content
-	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
-	$(".tab_content:first").show(); //Show first tab content
 
-	//On Click Event
+	$(".tab_content").hide();
+	$("ul.tabs li:first").addClass("active").show(); 
+	$(".tab_content:first").show(); 
+
 	$("ul.tabs li").click(function() {
 
-		$("ul.tabs li").removeClass("active"); //Remove any "active" class
-		$(this).addClass("active"); //Add "active" class to selected tab
-		$(".tab_content").hide(); //Hide all tab content
+		$("ul.tabs li").removeClass("active"); 
+		$(this).addClass("active"); 
+		$(".tab_content").hide(); 
 
-		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
-		$(activeTab).fadeIn(); //Fade in the active ID content
+		var activeTab = $(this).find("a").attr("href"); 
+		$(activeTab).fadeIn(); 
 		return false;
 	});
 
@@ -174,10 +173,8 @@ $(document).ready(function(){
 </head>
 <?php
 
-//capture search term and remove spaces at its both ends if the is any
  $searchTerm = trim($_POST["search"]);
 
-//check whether the name parsed is empty
 if($searchTerm == "")
 {
 	echo "Enter name you are searching for.";
@@ -186,18 +183,17 @@ if($searchTerm == "")
 ?>
 
 <?php
-//database connection info
+
 $db_host = "localhost";
 $db_name = "grocerysystem"; 
 $db_username = "root"; 
 $db_password = "root";
 
-//connecting to server and creating link to database
 $link = mysqli_connect($db_host, $db_name, $db_username, $db_password);
 ?>
 
 <?php
-//MYSQL search statement
+
 $query ="SELECT * FROM categoryy WHERE Category_Name LIKE '%$searchTerm%'";
 
 $results = mysqli_query($link, $query);

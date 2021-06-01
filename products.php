@@ -44,6 +44,8 @@ include("usersession.php");
 		  
 		  <?php
 
+		  
+
 	$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
     
 	$results = $mysqli->query("SELECT * FROM product ORDER BY Product_ID ASC");
@@ -53,12 +55,12 @@ include("usersession.php");
         while($obj = $results->fetch_object())
         {
 			echo '<div class="grid_1_of_4 images_1_of_4">'; 
-            echo '<form method="post" action="cartUpdate.php">';
+            echo '<form method="post" action="cart_update.php">';
 			echo '<div class="product-thumb" ><img src="images/'.$obj->Picture.'"></div>';
             echo '<div class="product-content"><h2><b>'.$obj->productName.'</b> </h2>';
             echo '<div class="product-desc">'.$obj->Description.'</div>';
             echo '<div class="product-info">';
-			echo '<p><span class="price"> Price: RM <big style="color:orange">'.$currency.$obj->Price.'</big></span></p>';
+			echo '<p><span class="price"> Price: RM <big style="color:orange">'.$obj->Price.'</big></span></p>';
             echo 'Qty <input type="text" name="product_qty" value="1" size="3" />';
 			echo '<div class="button"><span><img src="images/cart.jpg" alt="" /><button class="cart-button"  class="add_to_cart">Add to Cart</button></span> </div>';
 			echo '</div></div>';

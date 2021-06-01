@@ -29,7 +29,8 @@ include("config.php");
 <?php
     include ("./header.php")
     	?>
-	
+<div id="main" class="shell">
+    <br>
 <div class="viewcart">
  	<?php
     $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
@@ -39,16 +40,16 @@ include("config.php");
 		
 		echo '<form method="post" action="cart_update.php">';
 		echo '<table cellspacing="0">';
-			  echo   '<thead>';
-		  echo '<tr>';
-		  echo '<td>Check:</td>';
-		  echo '<td>Product:</td>';
-		  echo '<td>Quantity:</td>';
-		 echo ' <td>Description:</td>';
-		  echo '<td>Price:</td>';
-		  echo '<td>Action:</td>';
-		  echo '</tr>';
-		  echo '</thead>';
+		echo  '<thead>';
+		echo '<tr>';
+		echo '<td>Check:</td>';
+		echo '<td>Product:</td>';
+		echo '<td>Quantity:</td>';
+		echo '<td>Description:</td>';
+		echo '<td>Price:</td>';
+		echo '<td>Action:</td>';
+		echo '</tr>';
+		echo '</thead>';
 		  
 		$cart_items = 0;
 		foreach ($_SESSION["cart_session"] as $cart_itm)
@@ -91,6 +92,8 @@ include("config.php");
     	echo '</table>';
 		echo '<span> <h4 class="pricewayn"> Grand Total : RM<big style="color:green">'.$total.'</big> </h4></span> ';
 
+        echo '<br><br><span class="midigta"> <a  class="a-btn" href="./process.php"> <span class="a-btn-text"> Proceed to Payment</span></a></span>';
+        echo '</span>';
 		echo '</form>'; 
 
    }else{        
@@ -107,7 +110,7 @@ include("config.php");
 		  	<?php
 			$result=mysqli_query($mysqli,"select * from product") or die (mysqli_error());
 			while($row=mysqli_fetch_array($result)){
-		?>
+			?>
 					<li>
 						<a href="products.php" title="Product Link"><img src="images/<?php echo $row['Picture']?>" alt="IMAGES" /></a>
 						<div class="info">
@@ -119,12 +122,12 @@ include("config.php");
 						</div>
 					</li>
 					 <?php } ?>
-				</ul>
-				<div class="cl">&nbsp;</div>
-			</div>		
-			<br> <br> <br> <br> 
-			
-			</div>	
+		</ul>
+		<div class="cl">&nbsp;</div>
+</div>		
+	<br> <br> <br> <br> 			
+</div>	
+</div>
 			<?php
         include ("./footer.php")
     	?>

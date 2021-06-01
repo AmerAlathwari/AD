@@ -41,7 +41,7 @@
                     <h1>Customer Login:</h1> 
                     <p> 
                         <label for="username" class="uname" data-icon="u" > Your Email </label>
-                        <input type="text" name="magaca" required="required" type="text" placeholder="jananalibritish@gmail.com"/>
+                        <input type="text" name="magaca" required="required" type="text" placeholder="xxx@gmail.com"/>
                     </p>
                     <p> 
                         <label for="password" class="youpasswd" data-icon="p"> Your Password </label>

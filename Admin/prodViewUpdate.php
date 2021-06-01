@@ -115,7 +115,7 @@ $result = mysqli_query($mysqli,"SELECT * FROM product  where Product_ID ='$updat
    
    <tr>
 		<td>  
-			<label>Type:</label>
+			<label>Type</label>
 				<input type="text" id="type" name="type" value="<?php echo $row['Type'];?>"  placeholder="Full name" required>
 				<span class="error">This is an error</span>
 		</td>

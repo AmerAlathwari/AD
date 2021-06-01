@@ -36,7 +36,7 @@ include ("./header.php")
 				<div id="form_wrapper" class="form_wrapper">
 				  <div class="contact-form">
 				  	<h2>Contact Us</h2>
-					    <form method="POST" action="feedback_process.php" id="frmcontact">
+					    <form method="POST" action="contact_process.php" id="frmcontact">
 					    	<div>
 						    	<span><label>NAME</label></span>
 						    	<span><input type="text" name="name" id="name"value=""></span>
@@ -67,7 +67,7 @@ $(document).ready(function(){
         $.ajax({
         cache: false,
         type: 'POST',
-        url: 'feedback_process.php',
+        url: 'contact_process.php',
         data: $("#frmcontact").serialize(),
         success: function(d) {
             $("#someElement").html(d);

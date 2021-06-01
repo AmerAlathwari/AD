@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 20, 2021 at 08:50 AM
+-- Generation Time: May 31, 2021 at 12:00 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -39,7 +39,7 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`Category_ID`, `Category_Name`, `Discription`, `Picture`) VALUES
-(1, 'Bakery', 'Bakery and baked goods categories like bars, breads (bagels, buns, rolls, biscuits and loaf breads), cookies, desserts (cakes, cheesecakes and pies), muffins, pizza, snack cakes, sweet goods (doughnuts, Danish, sweet rolls, cinnamon rolls and coffee cake) and tortillas.', 'bread.png'),
+(1, '1622301720_', '', ''),
 (2, 'Fruits', 'Fruits and vegetables contain important vitamins, minerals and plant chemicals. They also contain fibre.', 'grape.png'),
 (4, 'Fresh Seafood', 'We emphasise on the quality of our fresh seafood.', 'ikan_kembung.jpeg'),
 (6, 'Vegetables', 'Fresh imported vegetables', 'vegetables.jpg'),
@@ -47,6 +47,28 @@ INSERT INTO `category` (`Category_ID`, `Category_Name`, `Discription`, `Picture`
 (16, 'Drinks', 'Variety easy to grab drink flavor, include coffee, bicarbonate, yogurt, milk and many more!', 'drinks.png'),
 (21, 'Noodles', 'Instant noodles, or instant ramen, are noodles sold in a precooked and dried block with flavoring powder and/or seasoning oil.', 'maggie.png'),
 (23, '1621487820_', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `contact_id` int(11) NOT NULL,
+  `Name` varchar(25) NOT NULL,
+  `Email` varchar(29) NOT NULL,
+  `Phone` varchar(29) NOT NULL,
+  `Subject` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`contact_id`, `Name`, `Email`, `Phone`, `Subject`) VALUES
+(9, 'Alya Nasuha', 'alyanasuha1@gmail.com', '0129800906', 'Great'),
+(10, 'Alya Nasuha', 'alyanasuha1@gmail.com', '0129800906', ' Bye!!!');
 
 -- --------------------------------------------------------
 
@@ -73,10 +95,11 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`Cust_Id`, `FullName`, `UserName`, `Phone`, `Email`, `Password`, `Re_Password`, `Country`, `City`, `Adress`, `PostalCode`) VALUES
-(1, 'Alya Nasuha', 'alyanasuha', '+60129800906', 'alyanasuha1@gmail.com', 'alya123', 'alya123', 'Malaysia', '', 'LOT 6601-A3, JALAN SERI JAYA KAMPUNG BUKIT KAPAR', '42200'),
+(1, 'Alya Nasuha', 'alyanasuha', '+60129800906', 'alyanasuha1@gmail.com', 'alya123', 'alya123', 'Malaysia', 'Selangor', 'LOT 6601-A3, JALAN SERI JAYA KAMPUNG BUKIT KAPAR', '42200'),
 (2, 'Syafiq Salim', 'syafiqsalim', '+60102336541', 'syafiqsalim@gmail.com', 'syafiq123', 'syafiq123', 'Malaysia', 'Selangor', 'Klang,Selangor', '42200'),
 (3, 'Zainiyah Zahari', 'zainiyahzahari', '+60133658173', 'zainiyahzahari@gmail.com', 'zainiyah123', 'zainiyah123', 'Malaysia', 'Selangor', 'LOT 6601-A3, JALAN SERI JAYA KAMPUNG BUKIT KAPAR', '42200'),
-(4, 'Halim', 'halimmm', '+6012552522', 'halim@gmail.com', 'halim123', 'halim123', 'Australia', '', 'Australia', '52230');
+(4, 'Halim', 'halimmm', '+6012552522', 'halim@gmail.com', 'halim123', 'halim123', 'Australia', '', 'Australia', '52230'),
+(5, '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -124,15 +147,17 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`Product_ID`, `productName`, `Category_ID`, `Model`, `Type`, `Warehouse_ID`, `Description`, `Price`, `Picture`) VALUES
-(11, 'Fuji Bakery Potato Bun', 1, 'Fuji Bakery', 'Bun', 2, 'Bread With Potato F', '3.40', '1619052540_fujibun.jpg'),
-(12, 'Grape', 2, 'Fruit', 'Local Fruit', 1, 'Fresh imported from New Zealand', '9.0', '1621326780_1619072640_grape.png'),
-(13, 'Ikan Kembung', 4, 'The Seafood Market', 'Fresh Fish', 3, 'Direct from Ocean', '3.00', '1621405380_ikan_kembung.jpeg'),
-(14, 'Dutch Lady Low Fat', 10, 'Dutch Lady', 'Milk', 5, 'Low fat fresh milk', '2.20', '1621329840_dutchlady_lowfat.png'),
-(15, 'Nescafe Original', 16, 'Nestle', 'Coffee', 5, 'Cold brew coffee', '2.30', '1621487940_nes_original.png'),
-(16, 'Nescafe Latte', 16, 'Nestle', 'Coffee', 5, 'Cold brew coffee', '2.30', '1621488000_nes_latte.png'),
-(17, 'Big Red Onion ', 6, 'Fresh', 'Vegetable', 4, 'Fresh picked vegeta', '4.50', '1621488180_bawang_besar.png'),
-(18, 'Small Red Onion', 6, 'Fresh', 'Vegetable', 4, 'Fresh picked vegeta', '4.0', '1621488180_bawang_merah.png'),
-(19, 'Maggie Kari 5pack', 21, 'Nestle', 'Instant Noodle', 5, 'Instant Maggie Kari', '3.90', '1621488300_maggie_kari_big.png');
+(11, 'Fuji Bakery Potato Bun', 1, 'Fuji Bakery', 'Bun', 2, 'Bread With Potato F', '3.40', '1622270760_fujibun.jpg'),
+(12, 'Grape', 2, 'Fruit', 'Local Fruit', 1, 'Fresh imported from New Zealand', '9.0', '1622087580_grape.png'),
+(13, 'Ikan Kembung', 4, 'The Seafood Market', 'Fresh Fish', 3, 'Direct from Ocean', '3.00', '1622087580_ikan_kembung.jpeg'),
+(14, 'Dutch Lady Low Fat', 16, 'Dutch Lady', 'Milk', 5, 'Low fat fresh milk', '2.20', '1622087820_dutchlady_lowfat.png'),
+(15, 'Nescafe Original', 16, 'Nestle', 'Coffee', 5, 'Cold brew coffee', '2.30', '1622087640_nes_original.png'),
+(16, 'Nescafe Latte', 16, 'Nestle', 'Coffee', 5, 'Cold brew coffee', '2.30', '1622087640_nes_latte.png'),
+(17, 'Big Red Onion ', 6, 'Fresh', 'Vegetable', 4, 'Fresh picked vegeta', '4.50', '1622087700_bawang_besar.png'),
+(18, 'Bawang Merah Kecil', 6, 'Fresh', 'Vegetable', 4, 'Fresh picked vegeta', '4.00', '1622089860_bawang_merah.png'),
+(19, 'Maggie Kari 5pack', 21, 'Nestle', 'Instant Noodle', 5, 'Instant Maggie Kari', '3.90', '1622087760_maggie_kari_big.png'),
+(20, 'Nestle Milo Icecream', 12, 'Nestle', 'Ice cream', 5, 'Original Milo flavor Icecream', '9.80', '1622089860_nestle_icecream_milo.png'),
+(21, 'Nestle KitKat Icecream', 12, 'Nestle', 'Ice cream', 5, 'Original KitKat flavor Icecream', '9.50', '1622090040_nestle_icecream_kitkat.png');
 
 -- --------------------------------------------------------
 
@@ -171,6 +196,12 @@ INSERT INTO `warehouse` (`Warehouse_ID`, `Country`, `City`, `Address`, `PostalCo
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`Category_ID`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`contact_id`);
 
 --
 -- Indexes for table `customer`
@@ -212,10 +243,16 @@ ALTER TABLE `category`
   MODIFY `Category_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `Cust_Id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Cust_Id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -227,7 +264,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `Product_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `Product_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `warehouse`

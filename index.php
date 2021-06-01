@@ -26,7 +26,7 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 
 <body>
 
-<div id="main">
+<br><div id="main">
 
   <header>
 				<h1 ><a align="center"  class="logo" href="index.php"><img src="images/logo.png" alt="Home" width="100" height="100"></a></h1>
@@ -38,7 +38,7 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
         </div>
     </header>
 
-</div>
+
 <div id="content">
   <div class="post" align="center">
 					<h1 >Welcome To The Coders Store</h1>
@@ -48,6 +48,7 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 
 			<div class="cl">&nbsp;</div>
 	</div>		
+</div>
 </div>
         
 <div id="main" class="shell">
@@ -77,11 +78,11 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
         {
 			echo '<div class="grid_1_of_4 images_1_of_4">'; 
             echo '<form method="post">';
-			echo '<div class="product-thumb"><img href="SignIn.php" src="images/'.$obj->Picture.'"></div>';
+			echo '<div class="product-thumb"><img src="images/'.$obj->Picture.'"></div>';
             echo '<div class="product-content"><h2><b>'.$obj->productName.'</b> </h2>';
             echo '<div class="product-desc">'.$obj->Description.'</div>';
             echo '<div class="product-info">';
-			echo '<p><span class="price"> Price: RM <big style="color:orange">'.$obj->Price.'</big></span></p>';
+			echo '<p><span class="price"> Price: RM <big style="color:orange">'.$currency.$obj->Price.'</big></span></p>';
 			echo '</div></div>';
             echo '</form>';
             echo '</div>';

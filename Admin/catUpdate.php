@@ -10,8 +10,8 @@ $id=$_POST['ID'];
 
 $categoryName    		=$_POST['$categoryName'];
 $description     		=$_POST['$description'];
-$image   				=$_FILES['image']['namee'];
-$categoryName     		= strtotime(date('Y-m-d H:i')).'_'.$image;
+$image   				    =$_FILES['image']['namee'];
+$categoryName     	= strtotime(date('Y-m-d H:i')).'_'.$image;
 
 
 $query="update category set Category_Name ='$categoryName', Discription ='$description', Picture ='$image' where Category_ID =$id ";
