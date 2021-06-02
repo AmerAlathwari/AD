@@ -161,7 +161,7 @@ h1#logo a { width: 300px; height: 69px; background: url('../images/logo.png') no
     -moz-animation-timing-function: linear;
     -moz-animation-iteration-count: infinite;
     -moz-animation-direction: normal;
-    -moz-animation-delay: 0;
+    -moz-animation-delay: unset;
     -moz-animation-play-state: running;
     -moz-animation-fill-mode: forwards;
 
@@ -170,7 +170,7 @@ h1#logo a { width: 300px; height: 69px; background: url('../images/logo.png') no
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: normal;
-    -webkit-animation-delay: 0;
+    -webkit-animation-delay: unset;
     -webkit-animation-play-state: running;
     -webkit-animation-fill-mode: forwards;
 }

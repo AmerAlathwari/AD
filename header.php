@@ -16,8 +16,8 @@
 				<ul  align="center">
 					<li><a href="customerPage.php" >Home</a></li>
 					<li><a href="products.php" >Product</a></li>
-					<li><a href="#" >Category</a></li>
-					<li><a href="#" >About us</a></li>
+					<li><a href="category.php" >Category</a></li>
+					<li><a href="about.php" >About us</a></li>
 					<li><a href="profile.php" >PROFILE</a></li>
 					<li><a href="contact.php" >Contact Us</a></li>
 					<li><a href="faq.php" >FAQ</a></li>
