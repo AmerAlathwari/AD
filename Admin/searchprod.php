@@ -1,7 +1,6 @@
 <?php
-include("../session.php");
-include("../config.php");
-
+	include("../session.php");
+	include("../config.php");
 ?>
 
 <!doctype html>
@@ -151,7 +150,6 @@ $(document).ready(function(){
 	$("ul.tabs li:first").addClass("active").show(); 
 	$(".tab_content:first").show();
 
-	//On Click Event
 	$("ul.tabs li").click(function() {
 
 		$("ul.tabs li").removeClass("active");

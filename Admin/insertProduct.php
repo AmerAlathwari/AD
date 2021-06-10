@@ -1,7 +1,6 @@
-
-
 <?php
    include('../config.php');
+   
 $fname = strtotime(date('Y-m-d H:i')).'_'.$_FILES['picture']['name'];
 $sql="INSERT INTO product (productName, Category_ID, Model,Type, Warehouse_ID, Description,Price, Picture) 
 VALUES ('$_POST[name]', '$_POST[select]', '$_POST[model]', '$_POST[type]', '$_POST[WH]', '$_POST[ml]', '$_POST[price]', '$fname')";

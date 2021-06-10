@@ -25,26 +25,25 @@ include("../config.php");
 	);
 	$(document).ready(function() {
 
-	//When page loads...
-	$(".tab_content").hide(); //Hide all content
-	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
-	$(".tab_content:first").show(); //Show first tab content
+	$(".tab_content").hide(); 
+	$("ul.tabs li:first").addClass("active").show(); 
+	$(".tab_content:first").show(); 
 
-	//On Click Event
 	$("ul.tabs li").click(function() {
 
-		$("ul.tabs li").removeClass("active"); //Remove any "active" class
-		$(this).addClass("active"); //Add "active" class to selected tab
-		$(".tab_content").hide(); //Hide all tab content
+		$("ul.tabs li").removeClass("active"); 
+		$(this).addClass("active"); 
+		$(".tab_content").hide(); 
 
-		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
-		$(activeTab).fadeIn(); //Fade in the active ID content
+		var activeTab = $(this).find("a").attr("href"); 
+		$(activeTab).fadeIn(); 
 		return false;
 	});
 
 });
     </script>
-    <script type="text/javascript">
+
+<script type="text/javascript">
     $(function(){
         $('.column').equalHeight();
     });
@@ -64,43 +63,39 @@ include("../config.php");
 	
 	<h4 class="alert_info">Welcome To <strong>"The Coders System Management"</strong> Admin Panel As: <?php echo "  ". "<font color='#f90'><big><b>".$login_session."</b></big></font>" ;?>  </h4>
 
-<script type="text/javascript">
-function validateForm()
-{
-var a=document.forms["addemployee"]["fullname"].value;
-if (a==null || a=="")
-  {
-  alert("Pls. Employee Full Name IS Missing !!!");
-  return false;
-  }
-var b=document.forms["addemployee"]["username"].value;
-if (b==null || b=="")
-  {
-  alert("Pls. Your User Name Is Missing !!!");
-  return false;
-  }
-  
-   var c=document.forms["addemployee"]["password"].value;
-if (c==null || c=="")
-  {
-  alert("Pls. Your Password Is MIsssing !!!");
-  return false;
-  }
+	<script type="text/javascript">
+	function validateForm()
+	{
+			var a=document.forms["addemployee"]["fullname"].value;
+		if (a==null || a=="")
+		{
+			alert("Pls. Employee Full Name IS Missing !!!");
+			return false;
+		}
+			var b=document.forms["addemployee"]["username"].value;
+		if (b==null || b=="")
+		{
+			alert("Pls. Your User Name Is Missing !!!");
+			return false;
+		}
+			var c=document.forms["addemployee"]["password"].value;
+		if (c==null || c=="")
+		{
+			alert("Pls. Your Password Is MIsssing !!!");
+			return false;
+		}
 
-}
-</script>	
+	}
+	</script>	
 
-
-	
     <script type="text/javascript">
         $(function() {
             $('#empValid').keyup(function() {
 			
                 if (this.value.match(/[^a-zA-Z]/g)) {
                     this.value = this.value.replace(/[^a-zA-Z ]/g, '');
-					
                 }
-				Alart("Numbers IS NOT Allowed Sir!!!!!! !!!");
+				Alart("Numbers is not Allowed.");
             });
         });
     </script>

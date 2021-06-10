@@ -10,9 +10,9 @@ if (!mysqli_query($mysqli,$sql))
   }
   header("location: addCategory.php");
   
-
- mysqli_close($mysqli);
+mysqli_close($mysqli);
 ?> 
- <?php
- echo "1 record added";
- ?>
+
+<?php
+   echo "1 record added";
+?>

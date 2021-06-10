@@ -1,4 +1,4 @@
-	<!-- header top section -->
+
 	<section class="banner" role="banner">
 	  <header align="center">
 		<a  href="../Admin/index.php"><img src="../images/logo.png" alt="Home" width="80" height="80"></a>
@@ -9,7 +9,7 @@
 <div id="content-wrap">	
 	<section id="secondary_bar">
 
-             <nav align="center" ><!-- Defining the navigation menu -->
+             <nav align="center" >
                 <ul >
 					<li class="logout"> <a href="../logout.php">Logout</a></li>
                     <li class="logout"> <span class="check"> <?php echo "Welcome Mr/Miss:   ". "<font color='##fa5400'><i><b>".$login_session."</b></i></font>" ;?> </span></li>
@@ -20,10 +20,10 @@
 				
             </nav>
 
-	</section><!-- end of secondary bar -->
+	</section>
 
 <aside id="sidebar" class="column">
-    <!-- Begin Search -->
+
     <div id="search">
         <form action="#" method="post" accept-charset="utf-8">
             <input type="text"  title="Search..." class="blink field"  placeholder="Search Product"   name='search' size=60 maxlength=100 />
@@ -32,7 +32,7 @@
         </form>
 
     </div>
-    <!-- End Search -->
+
     <hr/>
 
     <h3>Reports</h3>
@@ -60,5 +60,5 @@
         <li class="icn_categories"><a href="#">Customer Detail</a></li>
     </ul>
 
-</aside><!-- end of sidebar -->
+</aside>
 

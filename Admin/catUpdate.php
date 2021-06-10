@@ -1,5 +1,5 @@
 <?php
-include '../config.php';
+  include '../config.php';
 ?>
 
 <?php 
@@ -17,11 +17,13 @@ $categoryName     	= strtotime(date('Y-m-d H:i')).'_'.$image;
 $query="update category set Category_Name ='$categoryName', Discription ='$description', Picture ='$image' where Category_ID =$id ";
 $rows=mysqli_query($mysqli,$query);
 echo "Succesfully updated ".$rows;
- if(!empty($_FILES['image']['tmp_namee'])){
+ 
+if(!empty($_FILES['image']['tmp_namee'])){
   	move_uploaded_file($_FILES['image']['tmp_namee'], '../images/'.$categoryName);
   }
-mysqli_close($con);
-header("location: addCategory.php?msg= Update successful");
+
+  mysqli_close($con);
+  header("location: addCategory.php?msg= Update successful");
 exit();
 }
 

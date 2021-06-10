@@ -86,7 +86,6 @@ $result = mysqli_query($mysqli,"SELECT * FROM product  where Product_ID ='$updat
 		<td>   
 			<label>Category Name</label>
 
-				<?php echo $row['Category_ID'];?>
 				<?php
 		include('../config.php');
 		$name= mysqli_query($mysqli,"select * from category");

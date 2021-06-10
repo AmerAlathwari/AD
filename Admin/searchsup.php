@@ -1,6 +1,6 @@
 <?php
-include("../session.php");
-include("../config.php");
+	include("../session.php");
+	include("../config.php");
 
 ?>
 
@@ -238,16 +238,16 @@ if(mysqli_num_rows($results) >= 1)
 
 
     <tr>
-    <td><input type="checkbox"></td>
-    <td><?Php echo $row['Warehouse_ID']; ?></td>
-    <td><?php echo $row['Warehouse']; ?></td>
-   <td><?php echo $row['Country']; ?></td>
-	<td><?php echo $row['City']; ?></td>
-	<td><?php echo $row['Address']; ?></td>
-	<td><?php echo $row['PostalCode']; ?></td>
-	<td><?php echo $row['Email']; ?></td>
-    <td> <a href="wareViewUpdate.php?update=<?php echo $row['Warehouse_ID']; ?>"  onClick="edit(this);" title="empEdit" >  <input type="image" src="images/icn_edit.png" title="Edit"> </a>
-     <a href="DeleteWarehouse.php?delete=<?php echo $row['Warehouse_ID']; ?>" onClick="del(this);" title="Delete" ><input type="image" src="images/icn_trash.png" title="Trash">  </a></td>
+		<td><input type="checkbox"></td>
+		<td><?Php echo $row['Warehouse_ID']; ?></td>
+		<td><?php echo $row['Warehouse']; ?></td>
+		<td><?php echo $row['Country']; ?></td>
+		<td><?php echo $row['City']; ?></td>
+		<td><?php echo $row['Address']; ?></td>
+		<td><?php echo $row['PostalCode']; ?></td>
+		<td><?php echo $row['Email']; ?></td>
+		<td> <a href="wareViewUpdate.php?update=<?php echo $row['Warehouse_ID']; ?>"  onClick="edit(this);" title="empEdit" >  <input type="image" src="images/icn_edit.png" title="Edit"> </a>
+		<a href="DeleteWarehouse.php?delete=<?php echo $row['Warehouse_ID']; ?>" onClick="del(this);" title="Delete" ><input type="image" src="images/icn_trash.png" title="Trash">  </a></td>
     </tr>
 
 	<?php } ?>
