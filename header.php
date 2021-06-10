@@ -4,8 +4,17 @@
 			<br><br><h1>THE CODERS ONLINE GROCERY STORE</h1>
 			<div id="top-nav">
 				<ul>
+					<li>    
+						<div id="search">
+        					<form action="#" method="post" accept-charset="utf-8">
+            					<input type="text"  title="Search..." class="blink field"  placeholder="Search Product"   name='search' size=60 maxlength=100 />
+            					<input class="button" type="submit" value="Submit" />
+            				<div class="cl">&nbsp;</div>
+        					</form>
+    					</div>
+					</li>
+
 					<li><a href="#" title="Login Email"> <span class="janan"> <?php echo "Your Email Is: ". "<i><b>".$login_session."</b></i>" ;?> </span></a></li>
-					<li > <a href="contact.php" title="Contact"> <span class="jananalibritish"> Contact  </span></a>  </li>
 					<li class="janan"><a href="logout.php"><span class="jananalibritish">Logout </span></a></li>
 				</ul>
 			</div>
@@ -17,16 +26,15 @@
 					<li><a href="customerPage.php" >Home</a></li>
 					<li><a href="products.php" >Product</a></li>
 					<li><a href="category.php" >Category</a></li>
-					<li><a href="about.php" >About us</a></li>
+					<li><a href="aboutus.php" >About us</a></li>
 					<li><a href="profile.php" >PROFILE</a></li>
 					<li><a href="contact.php" >Contact Us</a></li>
 					<li><a href="faq.php" >FAQ</a></li>
-					
+
 				</ul>
 <?php
 
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-$currency = "RM";
 $total = 0;
 
 if(isset($_SESSION["cart_session"]))
@@ -47,7 +55,7 @@ if(isset($_SESSION["cart_session"]))
         echo '<br><h3  style="color: green" ><big> '.$cart_itm["name"].' </big></h3>';
         echo '<div class="p-code"><b><i>ID:</i></b><strong style="color: #d7565b" ><big> '.$cart_itm["code"].' </big></strong></div>';
 		echo '<span><b><i>Quantity</i></b><strong style="color: #d7565b" ><big> '.$cart_itm["TiradaProductTiga"].'</big></strong></span>';
-        echo '<div class="p-price"><b><i>Price: </b></i> <strong style="color: #d7565b" ><big>'. $currency.$cart_itm["Qiimaha"].'</big></strong></div>';
+        echo '<div class="p-price"><b><i>Price: </b></i> <strong style="color: #d7565b" ><big>'.$cart_itm["Qiimaha"].'</big></strong></div>';
         echo '</li>';
 
         $subtotal = ($cart_itm["Qiimaha"]*$cart_itm["TiradaProductTiga"]);
@@ -55,7 +63,7 @@ if(isset($_SESSION["cart_session"]))
 		$_SESSION["TotalPrice"] = $total;
     }
     echo '</ul>';
-    echo '<span class="check-out-txt"><strong style="color:green" ><i>Total: </i> <big style="color:green" >'. $currency.$total.'</big></strong> <a   class="a-btnjanan"  href="view_cart.php"> <span class="a-btn-text">Check Out</span></a></span>';
+    echo '<span class="check-out-txt"><strong style="color:green" ><i>Total:RM </i> <big style="color:green" >'.$total.'</big></strong> <a   class="a-btnjanan"  href="view_cart.php"> <span class="a-btn-text">Check Out</span></a></span>';
 	echo '<br><a   class="a-btnjanan"  href="cart_update.php?emptycart=1&return_url='.$current_url.'"><span class="a-btn-text">Clear Cart</span></a>';
 }else{
     echo ' <h6 class="text-center"></h6>';

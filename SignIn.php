@@ -25,8 +25,10 @@
 
 <div class="codrops-top">
     <header>
-    <p ><b> <a href="#toregister"  class="a-btn"><span class="a-btn-text">Admin Login</span></a>  </b>	<b> <a href="#tologin"  class="a-btn"> <span class="a-btn-text">Customer Login</span> </a> </b>
-    <a href="registerPage.php" class="a-btn"><strong><span class="a-btn-text">Create New Account</span></strong></a><a href="index.php" class="a-btn"><strong> <span class="a-btn-text">Back To Home</span></strong></a> </p>
+    <p ><b> <a href="#toregister"  class="a-btn"><span class="a-btn-text">Admin Login</span></a>  </b>	
+    <b> <a href="#tologin"  class="a-btn"> <span class="a-btn-text">Customer Login</span> </a> </b>
+    <a href="registerPage.php" class="a-btn"><strong><span class="a-btn-text">Create New Account</span></strong></a>
+    <a href="index.php" class="a-btn"><strong> <span class="a-btn-text">Back To Home</span></strong></a> </p>
 </header>
  <div class="clr"></div>
  </div> <br><br>

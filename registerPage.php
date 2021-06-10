@@ -9,6 +9,7 @@
 	
 
 </head>
+
 <body>
 <br><div id="main">
 
@@ -16,7 +17,7 @@
 	<h1 ><a align="center"  class="logo" href="index.php"><img src="images/logo.png" alt="Home" width="100" height="100"></a></h1>
         <div id="top-nav">
 			<ul>
-				 <li class="janan"><a href="SignIn.php"><span class="jananalibritish"> Signin </span></a></li>
+				 <li class="janan"><a href="SignIn.php"><span class="jananalibritish">Signin</span></a></li>
 			</ul>
         </div>
 </header>
@@ -67,12 +68,12 @@
 													
 								<tr>
 									<td>  
-										<label> Email</label>
+										<label>Email</label>
 										<input type="text" name="email" id="email"/>
 										<span class="error">This is an error</span>
 									</td>
 									<td>   
-										<label> FullName</label>
+										<label>FullName</label>
 										<input type="text" name="name" />
 										<span class="error">This is an error</span>					
 									</td>
@@ -95,13 +96,13 @@
 								<tr>
 									<td>  
 
-										<label> Re-Password</label>
+										<label>Re-Password</label>
 										<input type="password" name="password2"id="password2" />  
 										<div id="pass-info"> </div>
 									</td>
 								
 									<td>   
-											<label> Phone</label>
+											<label>Phone</label>
 											<input type="text" name="tell" id="tell"/>
 											<span class="error">This is an error</span>
 								   </td>
@@ -109,8 +110,7 @@
 							   
 								<tr>
 									<td>   
-									
-										<label> Country</label>
+										<label>Country</label>
 										<script type="text/javascript" src="js/countries.js"></script>
 										<select onchange="print_state('state',this.selectedIndex);" id="country" name ="country"></select>
 									</td>
@@ -124,7 +124,7 @@
 							   
 								<tr>
 									<td>   
-										<label> City</label>
+										<label>City</label>
 										<select name ="City" id ="state"></select>
 										<script language="javascript">print_country("country");</script>
 										<span class="error">This is an error</span>

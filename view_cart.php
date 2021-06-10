@@ -1,7 +1,6 @@
 <?php
-include("usersession.php");
-include("config.php");
-
+	include("usersession.php");
+	include("config.php");
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -21,11 +20,11 @@ include("config.php");
 	<script src="js/functions.js" type="text/javascript" charset="utf-8"></script>
 	
 	
-		 <!-- Linking scripts -->
     <script src="js/main.js" type="text/javascript"></script>
 	
 </head>
 <body>
+
 <?php
     include ("./header.php")
     	?>
@@ -40,7 +39,7 @@ include("config.php");
 		
 		echo '<form method="post" action="cart_update.php">';
 		echo '<table cellspacing="0">';
-		echo  '<thead>';
+		echo '<thead>';
 		echo '<tr>';
 		echo '<td>Check:</td>';
 		echo '<td>Product:</td>';
@@ -58,13 +57,8 @@ include("config.php");
 		   $results = $mysqli->query("SELECT productName,Description, Price FROM product  WHERE Product_ID='$Product_ID'"); 
           if ($results) { 
 		  
-	        
-			
-          //fetch results set as object and output HTML
           while($obj = $results->fetch_object())
         {
-			
-		  
 		    echo '<tr class="cart-itm">';
             echo '<td><input type="checkbox"></td>';
 			echo '<td><h3>'.$obj->productName.' (Code :'.$Product_ID.')</h3></td> ';
@@ -75,8 +69,6 @@ include("config.php");
             echo '</tr>';
 			$subtotal = ($cart_itm["Qiimaha"]*$cart_itm["TiradaProductTiga"]);
 			$total = ($total + $subtotal);
-
-			
 
 			echo '<input type="hidden" name="item_name['.$cart_items.']" value="'.$obj->productName.'" />';
 			echo '<input type="hidden" name="item_code['.$cart_items.']" value="'.$Product_ID.'" />';
@@ -92,7 +84,7 @@ include("config.php");
     	echo '</table>';
 		echo '<span> <h4 class="pricewayn"> Grand Total : RM<big style="color:green">'.$total.'</big> </h4></span> ';
 
-        echo '<br><br><span class="midigta"> <a  class="a-btn" href="./process.php"> <span class="a-btn-text"> Proceed to Payment</span></a></span>';
+        echo '<br><br><span class="midigta"> <a  class="a-btn" href="./payment.php"> <span class="a-btn-text"> Proceed to Payment</span></a></span>';
         echo '</span>';
 		echo '</form>'; 
 

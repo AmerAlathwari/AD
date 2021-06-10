@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 31, 2021 at 12:00 PM
+-- Generation Time: Jun 10, 2021 at 04:51 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -39,14 +39,14 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`Category_ID`, `Category_Name`, `Discription`, `Picture`) VALUES
-(1, '1622301720_', '', ''),
 (2, 'Fruits', 'Fruits and vegetables contain important vitamins, minerals and plant chemicals. They also contain fibre.', 'grape.png'),
 (4, 'Fresh Seafood', 'We emphasise on the quality of our fresh seafood.', 'ikan_kembung.jpeg'),
 (6, 'Vegetables', 'Fresh imported vegetables', 'vegetables.jpg'),
 (12, 'Ice cream', 'Variety of ice-cream flavor, will definitely catch your heart.', 'icecream.PNG'),
 (16, 'Drinks', 'Variety easy to grab drink flavor, include coffee, bicarbonate, yogurt, milk and many more!', 'drinks.png'),
 (21, 'Noodles', 'Instant noodles, or instant ramen, are noodles sold in a precooked and dried block with flavoring powder and/or seasoning oil.', 'maggie.png'),
-(23, '1621487820_', '', '');
+(24, 'Bakery', 'Bakery and baked goods categories like bars, breads (bagels, buns, rolls, biscuits and loaf breads), cookies, desserts (cakes, cheesecakes and pies), muffins, pizza, snack cakes, sweet goods (doughnuts, Danish, sweet rolls, cinnamon rolls and coffee cake) and tortillas.', 'fujibun.jpg'),
+(25, 'Bakery', 'Instant noodles, or instant ramen, are noodles sold in a precooked and dried block with flavoring powder and/or seasoning oil.', '1622087820_dutchlady_lowfat.png');
 
 -- --------------------------------------------------------
 
@@ -127,6 +127,32 @@ INSERT INTO `employee` (`Employee_ID`, `Employee_Name`, `Username`, `Password`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `card_num` bigint(20) NOT NULL,
+  `card_cvc` int(5) NOT NULL,
+  `card_exp_month` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `card_exp_year` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `item_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `item_number` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `item_price` float(10,2) NOT NULL,
+  `item_price_currency` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'usd',
+  `paid_amount` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `paid_amount_currency` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `txn_id` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `payment_status` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -147,8 +173,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`Product_ID`, `productName`, `Category_ID`, `Model`, `Type`, `Warehouse_ID`, `Description`, `Price`, `Picture`) VALUES
-(11, 'Fuji Bakery Potato Bun', 1, 'Fuji Bakery', 'Bun', 2, 'Bread With Potato F', '3.40', '1622270760_fujibun.jpg'),
-(12, 'Grape', 2, 'Fruit', 'Local Fruit', 1, 'Fresh imported from New Zealand', '9.0', '1622087580_grape.png'),
+(11, 'Fuji Bakery Potato Bun', 24, 'Fuji Bakery', 'Bun', 2, 'Bread With Potato F', '3.40', '1623334800_fujibun.jpg'),
+(12, 'Grape', 2, 'Fruit', 'Local Fruit', 1, 'Imported from New Zealand', '9.0', '1623334320_grape.png'),
 (13, 'Ikan Kembung', 4, 'The Seafood Market', 'Fresh Fish', 3, 'Direct from Ocean', '3.00', '1622087580_ikan_kembung.jpeg'),
 (14, 'Dutch Lady Low Fat', 16, 'Dutch Lady', 'Milk', 5, 'Low fat fresh milk', '2.20', '1622087820_dutchlady_lowfat.png'),
 (15, 'Nescafe Original', 16, 'Nestle', 'Coffee', 5, 'Cold brew coffee', '2.30', '1622087640_nes_original.png'),
@@ -217,6 +243,12 @@ ALTER TABLE `employee`
   ADD PRIMARY KEY (`Employee_ID`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -240,7 +272,7 @@ ALTER TABLE `warehouse`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `Category_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `Category_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -259,6 +291,12 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `employee`
   MODIFY `Employee_ID` int(95) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`

@@ -4,7 +4,6 @@
 
     session_start();
 {
-		// Define $myusername and $mypassword
 	$magaca=$_POST['magaca'];
 	$furaha=$_POST['furaha'];
 

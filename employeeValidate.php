@@ -1,16 +1,11 @@
 <?php 
-
-//include config.php to connect to the database
 	include("config.php"); 
-	
-	//start session
     session_start();
 {
-		// Define $myusername and $mypassword
+
 	$magaca=$_POST['magaca'];
 	$furaha=$_POST['furaha'];
 	
-	// To protect MySQL injection
 	$magaca= mysqli_real_escape_string( $mysqli,$magaca);
 	$furaha = mysqli_real_escape_string( $mysqli, $furaha);
 

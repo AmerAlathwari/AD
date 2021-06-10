@@ -7,7 +7,7 @@
 							<img src="images/logo.png" alt="The Coders Store" width="100" height="100"/>
 								<h4>Don't forget to shop now! For any enquiries :</h4>
 								<br>
-								<p> Call: +603 5521 4421</p>
+								<p> Call: +6012 980 0906</p>
 								<p> Email : <a href="mailto:alyanasuha1@gmail.com"> grocery@thecoders.com </a></p>
 							<div class="cl">&nbsp;</div>
 						</div>

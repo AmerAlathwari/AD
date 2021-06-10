@@ -11,7 +11,6 @@ include("usersession.php");
     <link rel="shortcut icon" href="images/logo.png" />
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
     <link rel="stylesheet" href="css/proStyle.css" type="text/css" media="all" />
-
     <link rel="stylesheet" href="css/category.css" type="text/css" media="all" />
 
     <script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
@@ -62,6 +61,7 @@ include ("./header.php")
 
                 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
                 $category_id = isset($_REQUEST['c_id'])?$_REQUEST['c_id']:0;
+
                 if($category_id ==0){
                     $results = $mysqli->query("SELECT * FROM product ORDER BY Product_ID ASC");
 
@@ -79,9 +79,9 @@ include ("./header.php")
                         echo '<div class="product-content"><h2><b>'.$obj->productName.'</b> </h2>';
                         echo '<div class="product-desc">'.$obj->Description.'</div>';
                         echo '<div class="product-info">';
-                        echo '<p><span class="price"> Price: RM <big style="color:orange">'.$obj->Price.'</big></span></p>';
+                        echo '<p><span class="price"> Price:RM <big style="color:orange">'.$obj->Price.'</big></span></p>';
                         echo '<div>Qty <input type="text" name="product_qty" value="1" size="3" /></div>';
-                        echo '<div class="button"><span><button class="cart-button add_to_cart"><i class="fa fa-shopping-cart fa-2x pr-1"></i>Add to Cart</button></span> </div>';
+                        echo '<div class="button"><span><img src="images/cart.jpg" /><button class="cart-button add_to_cart"></i>Add to Cart</button></span> </div>';
                         echo '</div></div>';
                         echo '<input type="hidden" name="Product_ID" value="'.$obj->Product_ID.'" />';
                         echo '<input type="hidden" name="type" value="add" />';
@@ -94,38 +94,6 @@ include ("./header.php")
                 ?>
             </div>
         </div>
-<!--        <div class="section group">-->
-<!---->
-<!--            --><?php
-//
-//            $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-//
-//            $results = $mysqli->query("SELECT * FROM product ORDER BY Product_ID ASC");
-//            if ($results) {
-//
-//                //fetch results set as object and output HTML
-//                while($obj = $results->fetch_object())
-//                {
-//                    echo '<div class="grid_1_of_4 images_1_of_4">';
-//                    echo '<form method="post" action="cart_update.php">';
-//                    echo '<div class="product-thumb" ><img src="images/'.$obj->Picture.'"></div>';
-//                    echo '<div class="product-content"><h2><b>'.$obj->productName.'</b> </h2>';
-//                    echo '<div class="product-desc">'.$obj->Description.'</div>';
-//                    echo '<div class="product-info">';
-//                    echo '<p><span class="price"> Price: RM <big style="color:orange">'.$obj->Price.'</big></span></p>';
-//                    echo 'Qty <input type="text" name="product_qty" value="1" size="3" />';
-//                    echo '<div class="button"><span><img src="images/cart.jpg" alt="" /><button class="cart-button"  class="add_to_cart">Add to Cart</button></span> </div>';
-//                    echo '</div></div>';
-//                    echo '<input type="hidden" name="Product_ID" value="'.$obj->Product_ID.'" />';
-//                    echo '<input type="hidden" name="type" value="add" />';
-//                    echo '<input type="hidden" name="return_url" value="'.$current_url.'" />';
-//                    echo '</form>';
-//                    echo '</div>';
-//                }
-//
-//            }
-//            ?>
-<!--        </div>-->
         <div class="cl">&nbsp;</div>
     </div>
 </div>

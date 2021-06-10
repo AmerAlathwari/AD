@@ -13,7 +13,6 @@ include("usersession.php");
 	<link rel="stylesheet" href="css/proStyle.css" type="text/css" media="all" />
 	   
 	<link rel="stylesheet" href="css/cart.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="css/chatStyle.css" type="text/css" media="screen" />
 	<script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
 
 	<script src="js/cufon-yui.js" type="text/javascript"></script>
