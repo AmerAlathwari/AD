@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 10, 2021 at 04:51 PM
+-- Generation Time: Jun 13, 2021 at 11:11 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -45,8 +45,7 @@ INSERT INTO `category` (`Category_ID`, `Category_Name`, `Discription`, `Picture`
 (12, 'Ice cream', 'Variety of ice-cream flavor, will definitely catch your heart.', 'icecream.PNG'),
 (16, 'Drinks', 'Variety easy to grab drink flavor, include coffee, bicarbonate, yogurt, milk and many more!', 'drinks.png'),
 (21, 'Noodles', 'Instant noodles, or instant ramen, are noodles sold in a precooked and dried block with flavoring powder and/or seasoning oil.', 'maggie.png'),
-(24, 'Bakery', 'Bakery and baked goods categories like bars, breads (bagels, buns, rolls, biscuits and loaf breads), cookies, desserts (cakes, cheesecakes and pies), muffins, pizza, snack cakes, sweet goods (doughnuts, Danish, sweet rolls, cinnamon rolls and coffee cake) and tortillas.', 'fujibun.jpg'),
-(25, 'Bakery', 'Instant noodles, or instant ramen, are noodles sold in a precooked and dried block with flavoring powder and/or seasoning oil.', '1622087820_dutchlady_lowfat.png');
+(24, 'Bakery', 'Bakery and baked goods categories like bars, breads (bagels, buns, rolls, biscuits and loaf breads), cookies, desserts (cakes, cheesecakes and pies), muffins, pizza, snack cakes, sweet goods (doughnuts, Danish, sweet rolls, cinnamon rolls and coffee cake) and tortillas.', 'fujibun.jpg');
 
 -- --------------------------------------------------------
 
@@ -121,7 +120,6 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`Employee_ID`, `Employee_Name`, `Username`, `Password`, `Picture`) VALUES
 (1, 'Alya Nasuha', 'alyanasuhax', 'admin123', 'alya.JPG'),
-(2, 'Syafiq Salim', 'syafiqqqsalim', 'Syafiq123', 'logo.png'),
 (4, 'Amer Abdulsalam', 'amerabdulsalam', 'Amer123', 'maggie_kari_big.png');
 
 -- --------------------------------------------------------
@@ -175,7 +173,7 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`Product_ID`, `productName`, `Category_ID`, `Model`, `Type`, `Warehouse_ID`, `Description`, `Price`, `Picture`) VALUES
 (11, 'Fuji Bakery Potato Bun', 24, 'Fuji Bakery', 'Bun', 2, 'Bread With Potato F', '3.40', '1623334800_fujibun.jpg'),
 (12, 'Grape', 2, 'Fruit', 'Local Fruit', 1, 'Imported from New Zealand', '9.0', '1623334320_grape.png'),
-(13, 'Ikan Kembung', 4, 'The Seafood Market', 'Fresh Fish', 3, 'Direct from Ocean', '3.00', '1622087580_ikan_kembung.jpeg'),
+(13, 'Ikan Kembung (0.5kg)', 4, 'The Seafood Market', 'Fresh Fish', 3, 'Direct from Ocean', '12.50', '1623395520_ikan_kembung.jpeg'),
 (14, 'Dutch Lady Low Fat', 16, 'Dutch Lady', 'Milk', 5, 'Low fat fresh milk', '2.20', '1622087820_dutchlady_lowfat.png'),
 (15, 'Nescafe Original', 16, 'Nestle', 'Coffee', 5, 'Cold brew coffee', '2.30', '1622087640_nes_original.png'),
 (16, 'Nescafe Latte', 16, 'Nestle', 'Coffee', 5, 'Cold brew coffee', '2.30', '1622087640_nes_latte.png'),
@@ -183,7 +181,10 @@ INSERT INTO `product` (`Product_ID`, `productName`, `Category_ID`, `Model`, `Typ
 (18, 'Bawang Merah Kecil', 6, 'Fresh', 'Vegetable', 4, 'Fresh picked vegeta', '4.00', '1622089860_bawang_merah.png'),
 (19, 'Maggie Kari 5pack', 21, 'Nestle', 'Instant Noodle', 5, 'Instant Maggie Kari', '3.90', '1622087760_maggie_kari_big.png'),
 (20, 'Nestle Milo Icecream', 12, 'Nestle', 'Ice cream', 5, 'Original Milo flavor Icecream', '9.80', '1622089860_nestle_icecream_milo.png'),
-(21, 'Nestle KitKat Icecream', 12, 'Nestle', 'Ice cream', 5, 'Original KitKat flavor Icecream', '9.50', '1622090040_nestle_icecream_kitkat.png');
+(21, 'Nestle KitKat Icecream', 12, 'Nestle', 'Ice cream', 5, 'Original KitKat flavor Icecream', '9.50', '1622090040_nestle_icecream_kitkat.png'),
+(22, 'Bawang putih 1kg', 6, 'Fresh', 'Vegetable', 4, 'Imported bawang putih', '12.00', '1623394020_bawang putihh.png'),
+(23, 'Roti Gardenia Classic', 24, 'Gardenia', 'Bread', 7, 'Fresh made', '2.50', '1623394680_roti gardinia.jpeg'),
+(24, 'Sotong Putih (0.5kg)', 4, 'The Seafood Market', 'Sotong', 3, 'Fresh seafood', '17.50', '1623395460_sotong.jpeg');
 
 -- --------------------------------------------------------
 
@@ -211,7 +212,8 @@ INSERT INTO `warehouse` (`Warehouse_ID`, `Country`, `City`, `Address`, `PostalCo
 (3, 'MY', 'Selangor', '73-G, Jalan Setia Utama AT U13/AT, Setia Alam', '40170', 'theseafoodmarket@gmail.com', 'The Seafood Market'),
 (4, 'MY', 'Selangor', 'B-1-13, 162 Residency KM12, Jalan Ipoh Rawang, Batu Caves, Selangor', '68100', 'freshselecthq@gmail.com', 'Fresh Select Sdn Bhd (Vegetable)'),
 (5, 'MY', 'Selangor', 'Menara Surian, No. 22-1, 22nd Floor, No. 1, Jalan PJU 7/3, Mutiara Damansara, Petaling Jaya', '47810', 'nestlehq@gmail.com', 'Nestle Products Sdn. Bhd.'),
-(6, 'MY', 'Johor', '21, Jalan Kempas Utama 3/6, Taman Kempas Utama, Johor Bahru', '81200', 'k2koh@grandmeltique.com', 'Grand Meltique Food Trading Sdn Bhd');
+(6, 'MY', 'Johor', '21, Jalan Kempas Utama 3/6, Taman Kempas Utama, Johor Bahru', '81200', 'k2koh@grandmeltique.com', 'Grand Meltique Food Trading Sdn Bhd'),
+(7, 'MY', 'Selangor', 'Lot 3, Jalan Pelabur 23/1, Shah Alam', '40300', 'customer_service@gardenia.com.my', 'Gardenia Bakeries KL Sdn Bhd');
 
 --
 -- Indexes for dumped tables
@@ -272,7 +274,7 @@ ALTER TABLE `warehouse`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `Category_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `Category_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -302,13 +304,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `Product_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `Product_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `warehouse`
 --
 ALTER TABLE `warehouse`
-  MODIFY `Warehouse_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Warehouse_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
