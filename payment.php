@@ -26,6 +26,8 @@ include("usersession.php");
 	<link rel="stylesheet" href="../css/PaymentStyle.css" type="text/css" media="screen"/>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="../js/sliding.form.js"></script>
+	<!-- Stripe JavaScript library -->
+	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 </head>
 <style>
         span.reference{
@@ -57,6 +59,48 @@ include("usersession.php");
     include ("./header.php")
     	?>
 		
+		<script type="text/javascript">
+			//set your publishable key
+			Stripe.setPublishableKey('pk_test_51IzEVUAiAd3ZERxxkJIsEOeDR0R1gg9UfMcjlCRQaba0Dy8I5bXKhELHKNUWVnCCeozPA6DBULQS5dDVa8tl4qfh00eW2mignX');
+
+			//callback to handle the response from stripe
+			function stripeResponseHandler(status, response) {
+				if (response.error) {
+					//enable the submit button
+					$('#payBtn').removeAttr("disabled");
+					//display the errors on the form
+					$(".payment-errors").html(response.error.message);
+				} else {
+					var form$ = $("#paymentFrm");
+					//get token id
+					var token = response['id'];
+					//insert the token into the form
+					form$.append("<input type='hidden' name='stripeToken' value='" 
+			+ token + "' />");
+					//submit form to the server
+					form$.get(0).submit();
+				}
+			}
+			$(document).ready(function() {
+				//on form submit
+				$("#paymentFrm").submit(function(event) {
+					//disable the submit button to prevent repeated clicks
+					$('#payBtn').attr("disabled", "disabled");
+					
+					//create single-use token to charge the user
+					Stripe.createToken({
+						number: $('.card-number').val(),
+						cvc: $('.card-cvc').val(),
+						exp_month: $('.card-expiry-month').val(),
+						exp_year: $('.card-expiry-year').val()
+					}, stripeResponseHandler);
+					
+					//submit from callback
+					return false;
+				});
+			});
+</script>
+
 <div id="main" class="shell">
 	<div id="content">	
 		<br><br>
@@ -73,22 +117,21 @@ include("usersession.php");
 								<form  class="register active" action="payment_process.php" method="POST" id="paymentFrm">
 									
 									<tr>
-										<td><input name="username" type="hidden" id="namebox" value="<?php echo $result['Cust_Id']?>"/></td></tr>
+										<td><input name="username" type="hidden" value="<?php echo $result['Cust_Id']?>"/></td></tr>
 									<tr>
-										<td>  <label>Full Name</label><input name="firstname"  type="text" id="namebox" value="<?php echo $result['FullName']?>"/></td></tr>
+										<td>  <label>Name</label><input name="name"  type="text" required/></td></tr>
 									<tr>
-										<td> <label>Phone</label><input name="phone"  type="text" id="namebox" value="<?php echo $result['Phone']?>"/></td></tr>
-									<tr>
-										<td> <label>Email</label><input name="Email" type="text" id="namebox" value="<?php echo $result['Email']?>"/></td></tr>
+										<td> <label>Email</label><input name="email" type="text" required/></td></tr>
 									<tr>  
-										<td> <label>Country</label> <input name="country"  type="text" id="namebox" value="<?php echo $result['Country']?>"/></td></tr>
-									<tr>
-										<td> <label>City</label> <input name="city"  type="text" id="namebox" value="<?php echo $result['City']?>"/></td></tr>
-									<tr>
-										<td> <label>Address</label> <input name="address"  type="text" id="namebox" value="<?php echo $result['Adress']?>"/></td></tr>
-									<tr>
-										<td> <label>Postal Code</label> <input name="pcode"  type="text" id="namebox" value="<?php echo $result['PostalCode']?>"/></td></tr>
-									
+										<td> <label>Card Number</label> <input name="card_num" size="20" type="text" autocomplete="off" class="card-number" required/></td></tr>
+									<tr>  
+										<td> <label>CVC</label> <input name="cvc" size="4" type="text" autocomplete="off" class="card-cvc" required/></td></tr>
+									<tr>  
+										<td> <label>Expiration (MM/YYYY)</label> 
+											<input name="exp_month" size="2" type="text" class="card-expiry-month" required/>
+											<span> / </span>
+											<input name="exp_year" size="4" type="text" class="card-expiry-year" required/>
+											</td></tr>
 									<tr>
 										<td> <label>Purchase Type</label> 
 											<select name="type" id="select">
@@ -120,7 +163,7 @@ include("usersession.php");
 											?>
 									
 										<td colspan="3">		
-										<button type="submit"  name="submit" value="Update" class="a-btn"><span class="a-btn-text">Make Payment</span> </button>	
+										<button type="submit"  name="submit" class="a-btn"><span class="a-btn-text">Submit Payment</span> </button>	
 									</td>
 										
 								</form>
