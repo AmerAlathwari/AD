@@ -188,6 +188,37 @@ include("../config.php");
 				</tr>
 			</form>		
 		</table>
+		<script src="./js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+
+			$("#save").click(function(){
+
+			var element = $(this);
+
+			 if(confirm("Category Information has successfully inserted!"))
+					  {
+
+			 $.ajax({
+			   type: "GET",
+			   url: "addCategory.php",
+			   data: info,
+			   success: function(){
+			   
+			   }
+			 });
+					 $(this).parents(".record").animate({ backgroundColor: "#fbc7c7" }, "fast")
+					.animate({ opacity: "hide" }, "slow");
+
+			 }
+
+			return false;
+
+			});
+
+			});
+		</script>
 	</div>
 
 	<script>
@@ -216,7 +247,7 @@ $(document).ready(function(){
 		?>
     <div id="tab1" class="tab_content">
 		<table class="tablesorter" cellspacing="0"> 
-			<thead><th colspan="6">List of Category</th></thead>
+			<thead><th colspan="6">List of Categories</th></thead>
 			<thead>
 				</tr>
 				<th>Check</th> 

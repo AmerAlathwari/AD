@@ -140,8 +140,8 @@ include("../config.php");
                     <thead><th colspan="7"> Order History</th></thead>
                     <thead>
                     </tr>
-                    <th> ID</th>
-                    <th> Name</th>
+                    <th>ID</th>
+                    <th>Name</th>
                     <th>Email</th>
                     <th>Total</th>
                     <th>Shipped</th>

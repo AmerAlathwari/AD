@@ -38,7 +38,7 @@
     <h3>Reports</h3>
     <ul class="toggle">
         <li class="icn_settings"><a href="orderHistory.php">Order Report</a></li>
-        <li class="icn_settings"><a href="#">Employee Report</a></li>
+        <li class="icn_settings"><a href="EmployeeReport.php">Employee Report</a></li>
         <li class="icn_settings"><a href="#">Customer Report</a></li>
         <li class="icn_settings"><a href="#">Product Report</a></li>
         <li class="icn_settings"><a href="salesReport.php">Sales Report</a></li>
@@ -56,8 +56,8 @@
 
     <h3>Tables</h3>
     <ul class="toggle">
-        <li class="icn_categories"><a href="#">Order Detail</a></li>
-        <li class="icn_categories"><a href="#">Customer Detail</a></li>
+        <li class="icn_categories"><a href="orderDetails.php">Order Detail</a></li>
+        <li class="icn_categories"><a href="cusDetails.php">Customer Detail</a></li>
     </ul>
 
 </aside>

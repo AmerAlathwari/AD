@@ -167,7 +167,7 @@
     			<td><?php echo $row['Full_Name']; ?></td>
    				<td><?php echo $row['Email']; ?></td>
 				<td><?php echo $row['Postal_Code']; ?></td>
-				<td><?php echo $row['Address']; ?></td>
+				<td><?php echo $row['Home_Address']; ?></td>
 				<td><?php echo $row['Country']; ?></td>
 				<td><?php echo $row['City']; ?></td>
 				<td><?php echo $row['Phone']; ?></td>

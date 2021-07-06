@@ -478,6 +478,38 @@ include("../config.php");
 			</tr>
 		</form>
 	</table>
+	<script src="./sweetalert2.min.js"></script>   
+		<script src="./js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+
+			$("#myButton").click(function(){
+
+			var element = $(this);
+
+			 if(confirm("Supplier Information has successfully inserted!"))
+					  {
+
+			 $.ajax({
+			   type: "GET",
+			   url: "addSupplier.php",
+			   data: info,
+			   success: function(){
+			   
+			   }
+			 });
+					 $(this).parents(".record").animate({ backgroundColor: "#fbc7c7" }, "fast")
+					.animate({ opacity: "hide" }, "slow");
+
+			 }
+
+			return false;
+
+			});
+
+			});
+		</script>
 </div>
 	
 	<script type="text/javascript">
@@ -504,7 +536,7 @@ $result = mysqli_query($mysqli,"SELECT * FROM warehouse");
 
 <div id="tab1" class="tab_content">
 	<table class="tablesorter" cellspacing="0"> 
-		<thead>  <th Colspan="9">Warehouse Data List</th></thead>
+		<thead>  <th Colspan="9">List of Supplier</th></thead>
 		<thead>
 		<thead>
 			</tr>
@@ -539,12 +571,10 @@ $result = mysqli_query($mysqli,"SELECT * FROM warehouse");
   <?php }mysqli_close($mysqli);?>
 		</tbody>
 	</table>
+
+	
 </div> 	
 </section>
-
-    <?php
-        include ("./footer.php")
-    ?>
 
 
 <!-- JS FILES --> 

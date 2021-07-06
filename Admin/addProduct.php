@@ -11,12 +11,11 @@ include("../config.php");
 	<title>The Coders Online Grocery System</title>
 
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
-	
+
 	<script src="./js/jquery-1.5.2.min.js" type="text/javascript"></script>
 	<script src="./js/hideshow.js" type="text/javascript"></script>
 	<script src="./js/jquery.tablesorter.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="./js/jquery.equalHeight.js"></script>
-	
+
 	<script type="text/javascript">
 		$(document).ready(function() 
 			{ 
@@ -47,64 +46,6 @@ include("../config.php");
 		$(function(){
 			$('.column').equalHeight();
 		});
-	</script>
-
-    <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
-
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-
-			load_data = {'fetch':1};
-			window.setInterval(function(){
-			 $.post('shout.php', load_data,  function(data) {
-				$('.message_box').html(data);
-				var scrolltoh = $('.message_box')[0].scrollHeight;
-				$('.message_box').scrollTop(scrolltoh);
-			 });
-			}, 1000);
-			
-			$("#shout_message").keypress(function(evt) {
-				if(evt.which == 13) {
-						var iusername = $('#shout_username').val();
-						var imessage = $('#shout_message').val();
-						post_data = {'username':iusername, 'message':imessage};
-						
-						$.post('shout.php', post_data, function(data) {
-							
-							$(data).hide().appendTo('.message_box').fadeIn();
-			
-							var scrolltoh = $('.message_box')[0].scrollHeight;
-							$('.message_box').scrollTop(scrolltoh);
-							
-	
-							$('#shout_message').val('');
-							
-						}).fail(function(err) { 
-						
-						alert(err.statusText); 
-						});
-					}
-			});
-			
-			$(".close_btn").click(function (e) {
-
-				var toggleState = $('.toggle_chat').css('display');
-				
-
-				$('.toggle_chat').slideToggle();
-	
-				if(toggleState == 'block')
-				{
-					$(".header div").attr('class', 'open_btn');
-				}else{
-					$(".header div").attr('class', 'close_btn');
-				}
-				 
-				 
-			});
-		});
-
 	</script>
 	</head>
 
@@ -238,28 +179,28 @@ include("../config.php");
 			   
 						<div class="bottom">
 							<td colspan="3">	
-								<button name="save" id="delbutton" title="Click to Save"  class="a-btn" > <span class="a-btn-text"> Add Product</span></</button>
+								<button name="save" id="savebutton" title="Click to Save"  class="a-btn" > <span class="a-btn-text"> Add Product</span></</button>
 							<div class="clear"></div>
                             </td>
 						</div>
 			</form>
 		</table>
-						
+		 
 		<script src="./js/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(function() {
 
 
-			$("#delbutton").click(function(){
+			$("#savebutton").click(function(){
 
 			var element = $(this);
 
-			 if(confirm("You have Pressed 'Add Product' button \n Are you sure to SAVE the Product?"))
+			 if(confirm("Product Information has successfully inserted!"))
 					  {
 
 			 $.ajax({
 			   type: "GET",
-			   url: "prodDelete.php",
+			   url: "addProduct.php",
 			   data: info,
 			   success: function(){
 			   
@@ -275,7 +216,7 @@ include("../config.php");
 			});
 
 			});
-		</script> 
+		</script>
 	</div>
 
 	<?php
@@ -284,7 +225,7 @@ include("../config.php");
 
 	<div id="tab1" class="tab_content">
 		<table class="tablesorter" cellspacing="0"> 
-			<thead>  <th Colspan="11">  The Coders Product Data List </th></thead>
+			<thead>  <th Colspan="11">List of Products</th></thead>
 			<thead>
 				</tr>
 					<th>Check</th> 
@@ -361,10 +302,6 @@ include("../config.php");
 </section>
 </div>
 </div>
-
-    <?php
-        include ("./footer.php")
-    ?>
 
 <!-- JS FILES --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
