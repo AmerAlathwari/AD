@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 13, 2021 at 11:11 AM
+-- Generation Time: Jul 06, 2021 at 02:54 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -125,28 +125,17 @@ INSERT INTO `employee` (`Employee_ID`, `Employee_Name`, `Username`, `Password`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Table structure for table `payment`
 --
 
-CREATE TABLE `orders` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `card_num` bigint(20) NOT NULL,
-  `card_cvc` int(5) NOT NULL,
-  `card_exp_month` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
-  `card_exp_year` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
-  `item_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `item_number` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `item_price` float(10,2) NOT NULL,
-  `item_price_currency` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'usd',
-  `paid_amount` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `paid_amount_currency` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `txn_id` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `payment_status` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+CREATE TABLE `payment` (
+  `order_ID` int(255) NOT NULL,
+  `Full_Name` varchar(25) NOT NULL,
+  `Phone` varchar(55) NOT NULL,
+  `Warehouse_ID` int(255) NOT NULL,
+  `Dilivery_Address` varchar(75) NOT NULL,
+  `Total_Amount` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -245,10 +234,10 @@ ALTER TABLE `employee`
   ADD PRIMARY KEY (`Employee_ID`);
 
 --
--- Indexes for table `orders`
+-- Indexes for table `payment`
 --
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `payment`
+  ADD KEY `payment_ibfk_1` (`Warehouse_ID`);
 
 --
 -- Indexes for table `product`
@@ -295,12 +284,6 @@ ALTER TABLE `employee`
   MODIFY `Employee_ID` int(95) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
@@ -311,6 +294,16 @@ ALTER TABLE `product`
 --
 ALTER TABLE `warehouse`
   MODIFY `Warehouse_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `payment`
+--
+ALTER TABLE `payment`
+  ADD CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`Warehouse_ID`) REFERENCES `warehouse` (`Warehouse_ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

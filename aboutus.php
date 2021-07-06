@@ -23,7 +23,30 @@ include("usersession.php");
     <script src="js/functions.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
-
+<style>
+        span.reference{
+            position:fixed;
+            left:5px;
+            top:5px;
+            font-size:10px;
+            text-shadow:1px 1px 1px #fff;
+        }
+        span.reference a{
+            color:#555;
+            text-decoration:none;
+			text-transform:uppercase;
+        }
+        span.reference a:hover{
+            color:#000;
+            
+        }
+        h1{
+            color:#ccc;
+            font-size:36px;
+            text-shadow:1px 1px 1px #fff;
+            padding:20px;
+        }
+    </style>
 <body id="about-bg">
 <?php
 include("./header.php")
@@ -57,11 +80,11 @@ include("./header.php")
             <h3 class="about-page-text-custom5">HOW IT WORKS</h3>
             <div class="row">
                 <div class="col-4">
-                    <img src="images/order1.PNG" alt="no image">
+                    <img src="images/order1.png" alt="no image">
                     <h3 class="about-page-text-custom6">ORDER</h3>
                 </div>
                 <div class="col-4">
-                    <img src="images/pick%20up.PNG" alt="no image"/>
+                    <img src="images/pick%20up.png" alt="no image"/>
                     <h3 class="about-page-text-custom6">PICK UP</h3>
                 </div>
                 <div class="col-4">

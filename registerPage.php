@@ -6,7 +6,6 @@
     <link rel="shortcut icon" href="images/logo.png" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/proStyle.css" type="text/css" media="all" />
-	
 
 </head>
 

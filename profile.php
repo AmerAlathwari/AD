@@ -20,8 +20,31 @@ include("config.php");
 	<script src="js/functions.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/main.js" type="text/javascript"></script>
 
-	
 </head>
+<style>
+        span.reference{
+            position:fixed;
+            left:5px;
+            top:5px;
+            font-size:10px;
+            text-shadow:1px 1px 1px #fff;
+        }
+        span.reference a{
+            color:#555;
+            text-decoration:none;
+			text-transform:uppercase;
+        }
+        span.reference a:hover{
+            color:#000;
+            
+        }
+        h1{
+            color:#ccc;
+            font-size:36px;
+            text-shadow:1px 1px 1px #fff;
+            padding:20px;
+        }
+    </style>
 <body>
 		<?php
         include ("./header.php")
@@ -51,38 +74,36 @@ include("config.php");
 						$query = mysqli_query($mysqli,"SELECT * FROM customer WHERE Email = '$id'") or die (mysqli_error()); 
 						$result = mysqli_fetch_array($query);	
 						?>
-		<table>	
-            <form  class="register active" action="profile_update.php" method="POST" autocomplete="off">
-			     
-				<tr>
-                  	<td><input name="username" type="hidden" id="namebox" value="<?php echo $result['Cust_Id']?>"/></td></tr>
-				<tr>
-                  	<td>  <label>Full Name</label><input name="firstname"  type="text" id="namebox" value="<?php echo $result['FullName']?>"/></td></tr>
-				<tr>
-                  	<td> <label>User Name</label><input name="lastname"  type="text" id="namebox" value="<?php echo $result['UserName']?>"/></td></tr>
-				<tr>
-                  	<td> <label>Phone</label><input name="phone"  type="text" id="namebox" value="<?php echo $result['Phone']?>"/></td></tr>
-                <tr>
-                  	<td> <label>Email</label><input name="Email" type="text" id="namebox" value="<?php echo $result['Email']?>"/></td></tr>
-				<tr>  
-                  	<td> <label>Country</label> <input name="country"  type="text" id="namebox" value="<?php echo $result['Country']?>"/></td></tr>
-				<tr>
-                  	<td> <label>City</label> <input name="city"  type="text" id="namebox" value="<?php echo $result['City']?>"/></td></tr>
-				<tr>
-                  	<td> <label>Address</label> <input name="address"  type="text" id="namebox" value="<?php echo $result['Adress']?>"/></td></tr>
-				<tr>
-                  	<td> <label>Postal Code</label> <input name="pcode"  type="text" id="namebox" value="<?php echo $result['PostalCode']?>"/></td></tr>
-				<td colspan="3">		
-					<button type="submit"  name="submit" value="Update" class="a-btn"><span class="a-btn-text">Update</span> </button>	
-				</td>
-					
-			</form>
-		</table>
-	</div>
-			
-		<div class="cl">&nbsp;</div>
-						</div>
-						
+							<table>	
+								<form  class="register active" action="profile_update.php" method="POST" autocomplete="off">
+									
+									<tr>
+										<td><input name="username" type="hidden" id="namebox" value="<?php echo $result['Cust_Id']?>"/></td></tr>
+									<tr>
+										<td>  <label>Full Name</label><input name="firstname"  type="text" id="namebox" value="<?php echo $result['FullName']?>"/></td></tr>
+									<tr>
+										<td> <label>User Name</label><input name="lastname"  type="text" id="namebox" value="<?php echo $result['UserName']?>"/></td></tr>
+									<tr>
+										<td> <label>Phone</label><input name="phone"  type="text" id="namebox" value="<?php echo $result['Phone']?>"/></td></tr>
+									<tr>
+										<td> <label>Email</label><input name="Email" type="text" id="namebox" value="<?php echo $result['Email']?>"/></td></tr>
+									<tr>  
+										<td> <label>Country</label> <input name="country"  type="text" id="namebox" value="<?php echo $result['Country']?>"/></td></tr>
+									<tr>
+										<td> <label>City</label> <input name="city"  type="text" id="namebox" value="<?php echo $result['City']?>"/></td></tr>
+									<tr>
+										<td> <label>Address</label> <input name="address"  type="text" id="namebox" value="<?php echo $result['Adress']?>"/></td></tr>
+									<tr>
+										<td> <label>Postal Code</label> <input name="pcode"  type="text" id="namebox" value="<?php echo $result['PostalCode']?>"/></td></tr>
+									<td colspan="3">		
+										<button type="submit"  name="submit" value="Update" class="a-btn"><span class="a-btn-text">Update</span> </button>	
+									</td>
+										
+								</form>
+							</table>
+					</div>
+					<div class="cl">&nbsp;</div>
+				</div>			
 		</li>
 	</ul>
 </div>

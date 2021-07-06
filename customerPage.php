@@ -23,6 +23,30 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
     <script src="js/main.js" type="text/javascript"></script>
 
 </head>
+<style>
+        span.reference{
+            position:fixed;
+            left:5px;
+            top:5px;
+            font-size:10px;
+            text-shadow:1px 1px 1px #fff;
+        }
+        span.reference a{
+            color:#555;
+            text-decoration:none;
+			text-transform:uppercase;
+        }
+        span.reference a:hover{
+            color:#000;
+            
+        }
+        h1{
+            color:#ccc;
+            font-size:36px;
+            text-shadow:1px 1px 1px #fff;
+            padding:20px;
+        }
+    </style>
 <body>
 
 <?php
@@ -33,39 +57,39 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 			<div class="shell">
 				<ul class="slider-items">
 					<li>
-						<img src="images/h1.png" alt="Slide Image" />
+						<img src="images/1.png" alt="Slide Image" />
 						<div class="slide-entry">
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
 					</li>
 					<li>
-						<img src="images/onlineshop.png" alt="Slide Image" />
+						<img src="images/2.png" alt="Slide Image" />
 						<div class="slide-entry">
 
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
 					</li>
 					<li>
-						<img src="images/h3.png" alt="Slide Image" />
+						<img src="images/3.png" alt="Slide Image" />
 						<div class="slide-entry">
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
 					</li>
 							<li>
-						<img src="images/h2.png" alt="Slide Image" />
+						<img src="images/4.png" alt="Slide Image" />
 						<div class="slide-entry">
 
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
 					</li>
 					<li>
-						<img src="images/h23.jpg" alt="Slide Image" />
+						<img src="images/5.png" alt="Slide Image" />
 						<div class="slide-entry">
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
 					</li>
 					<li>
-						<img src="images/s6.jpg" alt="Slide Image" />
+						<img src="images/6.png" alt="Slide Image" />
 						<div class="slide-entry"> 
 							<a href="products.php" class="button" title="Buy now"><span>Buy now</span></a>
 						</div>
@@ -102,7 +126,7 @@ $category_id = isset($_REQUEST['categoryId']) ? $_REQUEST['categoryId'] : 0;
 								echo '<div class="product-content"><h2><b>'.$obj->productName.'</b> </h2>';
 								echo '<div class="product-desc">'.$obj->Description.'</div>';
 								echo '<div class="product-info">';
-								echo '<p><span class="price"> Price:RM <big style="color:green">'.$obj->Price.'</big></span></p>';
+								echo '<p><span class="price"> Price:RM <big style="color:green">'.$currency.$obj->Price.'</big></span></p>';
 								echo '<div>Qty <input type="text" name="product_qty" value="1" size="3" /></div>';
 								echo '<div class="button"><span><img src="images/cart.jpg" /><button class="cart-button add_to_cart"></i>Add to Cart</button></span> </div>';
 								echo '</div></div>';

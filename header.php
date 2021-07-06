@@ -63,7 +63,7 @@ if(isset($_SESSION["cart_session"]))
 		$_SESSION["TotalPrice"] = $total;
     }
     echo '</ul>';
-    echo '<span class="check-out-txt"><strong style="color:green" ><i>Total:RM </i> <big style="color:green" >'.$total.'</big></strong> <a   class="a-btnjanan"  href="view_cart.php"> <span class="a-btn-text">Check Out</span></a></span>';
+    echo '<span class="check-out-txt" class="p-price"><strong style="color:green" ><i>Total:RM </i> <big style="color:green" >'.$currency.$total.'</big></strong> <a   class="a-btnjanan"  href="view_cart.php"> <span class="a-btn-text">Check Out</span></a></span>';
 	echo '<br><a   class="a-btnjanan"  href="cart_update.php?emptycart=1&return_url='.$current_url.'"><span class="a-btn-text">Clear Cart</span></a>';
 }else{
     echo ' <h6 class="text-center"></h6>';
